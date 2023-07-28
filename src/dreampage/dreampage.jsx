@@ -29,12 +29,12 @@ const DreamPage = () => {
     const [bool, setBool] = useState(false);
 
     return (
-        <nav>
+        <div>
             <div className=" relative bg-no-repeat bg-cover bg-center h-screen w-full" style={{ backgroundImage: `url(${background})` }}>
-                <div className='absolute right-0 z-0'>
+                <div className='max-1040:hidden absolute right-0 z-0'>
                     <img src={background1} alt="" />
                 </div>
-                <div className='absolute bottom-0 z-0'>
+                <div className='max-1040:hidden absolute bottom-0 -left-[80px]  z-0'>
                     <img src={background2} alt="" />
                 </div>
                 <div className='z-10 absolute' >
@@ -75,7 +75,7 @@ const DreamPage = () => {
                         </div>
                     )}
                     <div  >
-                        <div className='   h-[70px] mt-[20px] mx-[300px] max-1618:mx-[72px] max-1162:mx-[2px] px-[12px] flex items-center justify-center justify-between max-600:w-[100%]'>
+                        <div className='   h-[70px] pt-[20px] mx-[300px] max-1618:mx-[72px] max-1162:mx-[2px] px-[12px] flex items-center justify-center justify-between max-600:w-[100%]'>
                             <div className='flex '>
                                 <button onClick={() => setBool(true)}>
                                     <img className='pr-[30px] 900:hidden' src={link} alt="menu" />
@@ -121,7 +121,7 @@ const DreamPage = () => {
                                 <div className='font-bold text-[48px] text-lineblue'>Courses For All</div>
                             </div>
                             <div className=' pt-[40px]'>
-                                <div className='max-768:w-[100%]   p-[11px] h-[72px] flex  justify-between border-[1px] rounded-[10px] border-[#7A9EDD]'>
+                                <div className='max-768:w-[100%] w-[856px]   p-[11px] h-[72px] flex  justify-between border-[1px] rounded-[10px] border-[#7A9EDD]'>
                                     <div className='flex items-center justify-center'>
                                         <p className='text-[14px]'>Select Category</p>
                                         <select className='' ></select>
@@ -905,7 +905,7 @@ const DreamPage = () => {
                     </div>
                 </div>
             </div>
-        </nav>
+        </div>
 
     );
 };
