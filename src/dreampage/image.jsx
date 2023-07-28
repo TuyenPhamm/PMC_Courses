@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import logo from './image/ảnh_Viber_2023-07-24_14-04-37-905.png';
 import background from './image/Section.png'
-import background2 from './image/Section 2.png'
+import background1 from './image/bg1.png'
+import background2 from './image/bg2.png'
 import link from './image/Link.png';
 import stargreen from './image/.png';
 import staryealow from './image/yellow.png';
@@ -79,7 +80,7 @@ import down from './image/down.png'
 
 export {
     logo,
-    background,
+    background,background1,background2,
     link,
     stargreen,staryealow,
     right,
