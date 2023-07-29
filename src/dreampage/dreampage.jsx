@@ -29,9 +29,9 @@ const DreamPage = () => {
     const [bool, setBool] = useState(false);
 
     return (
-        <div>
+        <div className=''>
             <div className=" relative bg-no-repeat bg-cover bg-center h-screen w-full" style={{ backgroundImage: `url(${background})` }}>
-                <div className='max-1040:hidden absolute right-0 z-0'>
+                <div className='max-1040:hidden absolute right-[-192px] overflow:hidden  z-0 '>
                     <img src={background1} alt="" />
                 </div>
                 <div className='max-1040:hidden absolute bottom-0 -left-[80px]  z-0'>
