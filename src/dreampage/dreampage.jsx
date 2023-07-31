@@ -116,22 +116,22 @@ const DreamPage = () => {
                         </div>
                         <div className=' mx-[300px] pt-[140px] max-1618:mx-[72px] max-1162:mx-[2px]'>
                             <div className=''>
-                                <div className='font-bold text-[20px] text-green1920 max-1041:text-orange1040'>The Leader in Online Learning</div>
-                                <div className='font-bold text-[48px] text-lineblue pt-[24px] '>Engaging & Accessible Online </div>
-                                <div className='font-bold text-[48px] text-lineblue'>Courses For All</div>
+                                <div className='font-bold text-[20px] max-768:text-[16px] max-390:text-[15px] text-green1920 max-1041:text-orange1040'>The Leader in Online Learning</div>
+                                <div className='font-bold text-[48px] max-768:text-[30px] max-390:text-[25px]  text-lineblue pt-[24px] '>Engaging & Accessible Online </div>
+                                <div className='font-bold text-[48px] max-768:text-[30px] max-390:text-[25px]  text-lineblue'>Courses For All</div>
                             </div>
                             <div className=' pt-[40px]'>
                                 <div className='max-768:w-[100%] w-[856px] max-600:p-[20px]  p-[11px] h-[72px] max-600:h-[auto]  600:flex  600:justify-between  max-600:grid border-[1px] rounded-[10px] border-[#7A9EDD]'>
-                                    <div className=' flex items-center justify-center'>
-                                        <p className='text-[14px]'>Select Category</p>
+                                    <div className='font-bold flex items-center justify-center max-600:justify-between'>
+                                        <p className='text-[14px] max-600:px-[15px] '>Select Category</p>
                                         <select className='' ></select>
                                     </div>
                                     <input className='max-600:w-[100%] max-600:border-[1px] max-600:rounded-[10px] max-600:border-[#7A9EDD] w-[50%] max-600:mt-[25px] max-600:mb-[13px] max-600:px-[16px] max-600:py-[15px] ' placeholder='Search School, Online eductional centers, etc' />
-                                    <button className=' max-600:w-[100%] max-600:h-[40px] w-[220px] max-768:w-[20%] bg-green1920 font-bold text-[#FFFFFF] rounded-[5px] max-1041:bg-orange1040'>Search</button>
+                                    <button className=' max-600:w-[100%] max-600:h-[40px] w-[220px] max-768:w-[20%] bg-green1920 font-bold text-[#FFFFFF] rounded-[5px] max-1041:bg-orange1040 max-600:h-[40px]'>Search</button>
                                 </div>
                                 <div className='pt-[25px]'>
-                                    <p className='text-lineblue font-[500px]'>Trusted by over 15K Users worldwide since 2022</p>
-                                    <div className='pt-[16px]'>
+                                    <p className='text-lineblue font-medium'>Trusted by over 15K Users worldwide since 2022</p>
+                                    <div className='pt-[16px] font-bold'>
                                         <p className='flex text-[#21B477] justify-start text-[15px]'>4.4
                                             <img className='pl-[5px]' src={stargreen} alt="" />
                                             <img className='pl-[5px]' src={stargreen} alt="" />
@@ -164,7 +164,7 @@ const DreamPage = () => {
                             </button>
                         </div>
 
-                        <div className='  max-768:order-1 max-600:order-2 max-600:grid-cols-1 px-[12px] grid grid-rows-2 grid-cols-2 gap-[24px] text-center bg-gradient-to-b from-[#FFFFFF] via-[#E0EBFF] to-[#FFFFFF] '>
+                        <div className='  max-768:order-1 max-600:order-2 max-600:grid-cols-1 px-[12px] grid grid-rows-2 grid-cols-2 gap-[24px] text-center bg-gradient-to-b max-600:bg-gradient-to-r from-[#FFFFFF] via-[#E0EBFF] to-[#FFFFFF] '>
                             <div className=' grid-cols-1 grid-rows-1 bg-[#fff]  h-[300px] rounded-[10px]'>
                                 <div className=' my-[70px]'>
                                     <img className='mx-auto my-[auto] pb-[20px]' src={one} alt="" />
@@ -200,7 +200,7 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-1618:px-[72px] max-1162:px-[12px] bg-[#FBFCFF] bg-gradient-to-b from-[#FFFFFF] via-[#E0EBFF] to-[#FFFFFF]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px] max-600:px-0 bg-[#FBFCFF] bg-gradient-to-b from-[#FFFFFF] via-[#E0EBFF] to-[#FFFFFF]'>
                         <div className='text-center'>
                             <span className=' text-[20px] leading-[150%] text-green1920 font-semibold max-1041:text-orange1040'>Favourite Course</span>
                             <h1 className='text-[32px] font-bold text-[#4F4F4F] leading-[120%]  pt-[15px] pb-[24px] max-600:text-[20px]'>Top Category</h1>
@@ -208,7 +208,7 @@ const DreamPage = () => {
                                 gravida maecenas augue elementum et neque. Suspendisse imperdiet.
                             </p>
                         </div>
-                        <div className='grid grid-rows-2 grid-cols-4 max-768:grid-rows-4 max-768:grid-cols-2 max-600:grid-cols-1  gap-[24px] p-[12px] bg-gradient-to-b from-[#FFFFFF] via-[#E0EBFF] to-[#FFFFFF]'>
+                        <div className='grid grid-rows-2 grid-cols-4 max-768:grid-rows-4 max-768:grid-cols-2 max-600:grid-cols-1  gap-[24px] py-[12px] bg-gradient-to-b max-600:bg-gradient-to-r from-[#FFFFFF] via-[#E0EBFF] to-[#FFFFFF]'>
                             <div className='grid-cols-1 grid-rows-1 p-[31px] bg-white  rounded-[10px]'>
                                 <img src={category1} alt="" />
                                 <div>
@@ -271,7 +271,7 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px] '>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>What's New</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Featured Courses</h1>
@@ -418,7 +418,7 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px]'>
                         <div className='pt-[80px] grid grid-cols-2 max-768:grid-cols-1'>
                             <div><img className='mx-[75px] max-1040:m-0 max-768:mx-auto ' src={skil1} alt="" /></div>
                             <div className='my-auto p-[12px]'>
@@ -438,7 +438,7 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px]'>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>What's New</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Master the skills to drive your career</h1>
@@ -499,7 +499,7 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[120px] mx-auto max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  mx-auto max-1618:px-[72px] max-1162:px-[12px]'>
                         <img className='mx-auto' src={user} alt="" />
                         <div className=' mx-auto text-center pt-[50px] '>
                             <h1 className='text-[32px] font-bold leading-[120%] text-[#4F4F4F] max-600:text-[20px] '>Join over <span className='text-[#1E7115] max-1041:text-orange1040'>5 Million</span> Students</h1>
@@ -523,14 +523,14 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px]'>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>New Courses</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Trending Courses</h1>
                             <p className='pb-[50px] text-[#5C5C5C] px-[298px] text-[16px] leading-[150%] max-1041:px-[75px] max-600:px-0 max-600:text-[16px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget aenean accumsan bibendum
                                 gravida maecenas augue elementum et neque. Suspendisse imperdiet.</p>
                         </div>
-                        <div className='pt-[50px] grid grid-rows-2 grid-cols-2 gap-[24px] p-[24px] max-900:grid-cols-1 '>
+                        <div className='pt-[50px] grid grid-rows-2 grid-cols-2 gap-[24px] p-[24px] max-460:p-0 max-900:grid-cols-1 '>
                             <div className='flex max-900:flex-none max-460:grid max-460:grid-rows-2 '>
                                 <img className='max-460:mx-auto' src={linkcouser1} alt="" />
                                 <div className='px-[20px]'>
@@ -625,9 +625,9 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-1618:px-[72px] max-1162:px-[12px] grid grid-cols-2 max-1040:grid-cols-1 gap-[24px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px] grid grid-cols-2 max-1040:grid-cols-1 gap-[24px]'>
                         <img className='h-[100%] max-1040:mx-auto rounded-[10px]' src={feature} alt="" />
-                        <div className='p-[20px]'>
+                        <div className='p-[20px] max-600:p-0'>
                             <h1 className='text-[#5C5C5C] text-[32px] font-bold leading-[120%] max-600:text-[20px]'>Want to share your knowledge?</h1>
                             <h1 className='text-[#5C5C5C] text-[32px] font-bold leading-[120%] max-600:text-[20px]'>Join us a Mentor</h1>
                             <p className='pt-[25px] text-[#292929] text-[16px] font-normal leading-[150%]'>High-definition video is video of higher resolution and quality than standard-definition. While there is no standardized meaning for high-definition, generally any video.</p>
@@ -665,7 +665,7 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-1618:px-[72px] max-1162:px-[12px] '>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px] '>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>New Courses</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Featured Instructor</h1>
@@ -727,7 +727,7 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px]'>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>Check out these real reviews</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Users-love-us Don't take it from us</h1>
@@ -776,7 +776,7 @@ const DreamPage = () => {
 
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px]'>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>News & Events</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Our Latest Updates</h1>
@@ -835,7 +835,7 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px]'>
                         <div className=' grid grid-cols-6 max-768:grid-cols-2 max-768:grid-rows-2 max-460:grid-cols-1 max-460:text-center'>
                             <div className='p-[12px] col-span-2 max-768:grid-cols-1 max-768:grid-rows-1 max-768:col-span-1  '>
                                 <img className='w-[50%] max-460:mx-auto' src={logo} alt="" />
