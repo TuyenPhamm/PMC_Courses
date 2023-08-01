@@ -13,7 +13,7 @@
 // export default App;
 import React from 'react';
 import './App.css';
-import DreamPage from './dreampage/dreampage';
+import DreamPage from './dreampage/dreampage.tsx';
 
 function App() {
   return (

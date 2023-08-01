@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import {
+    List, ListItem, ListItemButton, ListItemText,
+    SwipeableDrawer, ListItemIcon, Divider, Button, Box,
+    Menu, MenuItem
+} from '@mui/material';
+import {
     logo,
-    background,background1,background2,
+    background, background1, background2,
     link,
     stargreen, staryealow,
     right,
@@ -25,88 +30,184 @@ import {
     blog1, blog2, blog3
 } from './image.jsx'
 
-const DreamPage = () => {
-    const [bool, setBool] = useState(false);
+type Anchor = ' ' | 'right';
 
+const DreamPage = () => {
+    const [state, setState] = React.useState({
+        bool: false,
+    });
+    const toggleDrawer =
+        (anchor: Anchor, open: boolean) =>
+            (event: React.KeyboardEvent | React.MouseEvent) => {
+                if (
+                    event &&
+                    event.type === 'keydown' &&
+                    ((event as React.KeyboardEvent).key === 'Tab' ||
+                        (event as React.KeyboardEvent).key === 'Shift')
+                ) {
+                    return;
+                }
+                setState({ ...state, [anchor]: open });
+            };
+    const list = (anchor: Anchor) => (
+        <Box
+            sx={{ width: 260 }}
+            role="presentation"
+            onClick={toggleDrawer(anchor, false)}
+            onKeyDown={toggleDrawer(anchor, false)}
+        >
+            <List>
+                <div className='flex  bg-white h-[60px]'>
+                    <img className='' src={logo} alt="" />
+                    <button>
+                        <img className='w-[16px] h-[18px] my-auto ml-[80px]  ' src={close} alt="" />
+                    </button>
+                </div>
+                <div className='pb-[993px] bg-[#F66962]'>
+                    {['Home ', 'Instructor', 'Student', 'Page', 'Blog', 'Login / Signup'].map((text, index) => (
+                        <ListItem className='text-[#fff] bg-[#F66962] ' key={text} disablePadding>
+                            <ListItemButton>
+                                <ListItemText primary={text} />
+                                <ListItemIcon>
+                                    <img src={down} alt="" />
+                                </ListItemIcon>
+                            </ListItemButton>
+                        </ListItem>
+                    ))}
+                </div>
+            </List>
+        </Box>
+    );
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     return (
-        <div className=''>
-            <div className="overflow:hidden relative bg-no-repeat bg-cover bg-center h-screen w-full" style={{ backgroundImage: `url(${background})` }}>
-                <div className='max-1040:hidden absolute right-0   z-0 '>
+        <div className=' relative'>
+            <div className=" relative bg-no-repeat bg-cover bg-center h-screen w-full" style={{ backgroundImage: `url(${background})` }}>
+                <div className='max-1040:hidden  absolute right-0   z-0 '>
                     <img className='' src={background1} alt="" />
                 </div>
-                <div className='max-1040:hidden absolute bottom-0 -left-[80px]  z-0'>
+                <div className='max-1040:hidden absolute mt-[550px] -left-[80px]  z-0'>
                     <img src={background2} alt="" />
                 </div>
                 <div className='z-10 absolute  max-600:px-[12px]' >
-                    {bool && (
-                        <div className='absolute w-[260px]  900:hidden pb-[993px] max-390:pb-[321px] bg-[#F66962]  '>
-                            <div className='flex justify-between bg-white h-[60px]'>
-                                <img className='' src={logo} alt="" />
-                                <button onClick={() => setBool(false)}>
-                                    <img className='w-[16px] h-[18px] my-auto   ' src={close} alt="" />
+                    <div className=''>
+                        <div className='max-900:px-[40px] max-600:px-[12px]  h-[70px] pt-[20px] mx-[300px] max-1618:mx-[72px] max-1162:mx-[2px] px-[12px] flex items-center justify-between '>
+                            <div className='flex  max-600:w-[100%]'>
+                                <button>
+                                    <div className='absolute 900:hidden text-white'>
+                                        {([' '] as const).map((anchor) => (
+                                            <React.Fragment key={anchor}>
+                                                <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+                                                <SwipeableDrawer
+                                                    // anchor={anchor}
+                                                    open={state[anchor]}
+                                                    onClose={toggleDrawer(anchor, false)}
+                                                    onOpen={toggleDrawer(anchor, true)}
+                                                >
+                                                    {list(anchor)}
+                                                </SwipeableDrawer>
+                                            </React.Fragment>
+                                        ))}
+                                    </div>
+                                    <img className=' pr-[30px] 900:hidden ' src={link} alt="menu" />
                                 </button>
+                                <img className='mx-auto relative h-[100px] max-600:h-[80px]' src={logo} alt="logo" />
                             </div>
-                            <div className='  '>
-                                <div className='flex justify-between p-[20px] border-b-[1px] border-[#fff] '>
-                                    <p className='text-[#fff] text-[14px] font-medium leading-[150%]'>Home</p>
-                                    <img className='w-[13px] h-[13px]' src={down} alt="" />
+                            <div className=' text-textColor text-[15px] flex flex-wrap gap-[20px] max-1040:text-[13px] max-900:hidden'>
+                                <div className=' '>
+                                    <Button className='hover:text-[#F66962]'
+                                        id="basic-button1"
+                                        aria-controls={open ? 'basic-menu1' : undefined}
+                                        aria-haspopup="true"
+                                        aria-expanded={open ? 'true' : undefined}
+                                        onClick={handleClick}
+                                    >
+                                        Home
+                                    </Button>
+                                    <Menu
+                                        id="basic-menu1"
+                                        anchorEl={anchorEl}
+                                        open={open}
+                                        onClose={handleClose}
+                                        MenuListProps={{
+                                            'aria-labelledby': 'basic-button1',
+                                        }}
+                                    >
+                                        <MenuItem onClick={handleClose}>1</MenuItem>
+                                        <MenuItem onClick={handleClose}>2</MenuItem>
+                                        <MenuItem onClick={handleClose}>3</MenuItem>
+                                    </Menu>
+
                                 </div>
-                                <div className='flex justify-between p-[20px] border-b-[1px] border-[#fff] '>
-                                    <p className='text-[#fff] text-[14px] font-medium leading-[150%]'>Instructor</p>
-                                    <img className='w-[13px] h-[13px]' src={down} alt="" />
+                                <div className=' '>
+                                    <Button className='hover:text-[#F66962] '
+                                        id="basic-button2"
+                                        aria-controls={open ? 'basic-menu2' : undefined}
+                                        aria-haspopup="true"
+                                        aria-expanded={open ? 'true' : undefined}
+                                        onClick={handleClick}
+                                    >
+                                        Instructor
+                                    </Button>
+                                    <Menu
+                                    id="basic-menu2"
+                                    anchorEl={anchorEl}
+                                    open={open}
+                                    onClose={handleClose}
+                                    MenuListProps={{
+                                        'aria-labelledby': 'basic-button2',
+                                    }}
+                                    >
+                                        <MenuItem onClick={handleClose}>3</MenuItem>
+                                        <MenuItem onClick={handleClose}>4</MenuItem>
+                                        <MenuItem onClick={handleClose}>5</MenuItem>
+                                    </Menu>
                                 </div>
-                                <div className='flex justify-between p-[20px] border-b-[1px] border-[#fff] '>
-                                    <p className='text-[#fff] text-[14px] font-medium leading-[150%]'>Student</p>
-                                    <img className='w-[13px] h-[13px]' src={down} alt="" />
+                                <div className=' '>
+                                    <Button className='hover:text-[#F66962] '
+                                        id="basic-button"
+                                        aria-controls={open ? 'basic-menu' : undefined}
+                                        aria-haspopup="true"
+                                        aria-expanded={open ? 'true' : undefined}
+                                        onClick={handleClick}
+                                    >
+                                        Student
+                                    </Button>
+
                                 </div>
-                                <div className='flex justify-between p-[20px] border-b-[1px] border-[#fff] '>
-                                    <p className='text-[#fff] text-[14px] font-medium leading-[150%]'>Pages</p>
-                                    <img className='w-[13px] h-[13px]' src={down} alt="" />
+                                <div className=' '>
+                                    <Button className='hover:text-[#F66962] '
+                                        id="basic-button"
+                                        aria-controls={open ? 'basic-menu' : undefined}
+                                        aria-haspopup="true"
+                                        aria-expanded={open ? 'true' : undefined}
+                                        onClick={handleClick}
+                                    >
+                                        Pages
+                                        
+                                    </Button>
+
+
                                 </div>
-                                <div className='flex justify-between p-[20px] border-b-[1px] border-[#fff] '>
-                                    <p className='text-[#fff] text-[14px] font-medium leading-[150%]'>Blog</p>
-                                    <img className='w-[13px] h-[13px]' src={down} alt="" />
-                                </div>
-                                <div className='flex justify-between p-[20px] border-b-[1px] border-[#fff] '>
-                                    <p className='text-[#fff] text-[14px] font-medium leading-[150%]'>Login / Signup</p>
-                                    <img className='w-[13px] h-[13px]' src={down} alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    )}
-                    <div  >
-                        <div className='  h-[70px] pt-[20px] mx-[300px] max-1618:mx-[72px] max-1162:mx-[2px] px-[12px] flex items-center justify-center justify-between max-600:w-[100%]'>
-                            <div className='flex '>
-                                <button onClick={() => setBool(true)}>
-                                    <img className='pr-[30px] 900:hidden' src={link} alt="menu" />
-                                </button>
-                                <img className='h-[100px] max-600:mx-auto max-600:block' src={logo} alt="logo" />
-                            </div>
-                            <div className=' text-textColor text-[15px] flex flex-wrap gap-[30px] max-1040:text-[13px] max-900:hidden'>
-                                <div className=' hover:text-[#F66962]'>
-                                    <p className='  '>Home
-                                        <select className='' name="" id=""></select>
-                                    </p>
-                                </div>
-                                <div className='hover:text-[#F66962]'>
-                                    <p className=' '>Instructor
-                                        <select name="" id=""></select>
-                                    </p>
-                                </div>
-                                <div className='hover:text-[#F66962]'>
-                                    <p className=' '>Student
-                                        <select name="" id=""></select>
-                                    </p>
-                                </div>
-                                <div className='hover:text-[#F66962]'>
-                                    <p className=' '>Pages
-                                        <select name="" id=""></select>
-                                    </p>
-                                </div>
-                                <div className='hover:text-[#F66962]'>
-                                    <p className=' '>Blog
-                                        <select name="" id=""></select>
-                                    </p>
+                                <div className=' '>
+                                    <Button className='hover:text-[#F66962] '
+                                        id="basic-button"
+                                        aria-controls={open ? 'basic-menu' : undefined}
+                                        aria-haspopup="true"
+                                        aria-expanded={open ? 'true' : undefined}
+                                        onClick={handleClick}
+                                    >
+                                        Blog
+                                        
+                                    </Button>
+
+
                                 </div>
                             </div>
                             <div className='flex font-bold max-600:hidden'>
@@ -114,16 +215,16 @@ const DreamPage = () => {
                                 <button className='w-[165px] h-[46px] text-[16px] max-1040:w-[120px] max-1040:h-[35px]  text-[#FFFFFF] bg-green1920 max-1041:bg-orange1040 rounded-[5px]'>Sign up</button>
                             </div>
                         </div>
-                        <div className=' mx-[300px] pt-[140px] max-1618:mx-[72px] max-1162:mx-[2px]'>
+                        <div className=' mx-[300px] pt-[140px] max-1618:mx-[72px] max-1162:mx-[40px] max-600:mx-[12px]'>
                             <div className=''>
                                 <div className='font-bold text-[20px] max-768:text-[16px] max-390:text-[15px] text-green1920 max-1041:text-orange1040'>The Leader in Online Learning</div>
                                 <div className='font-bold text-[48px] max-768:text-[30px] max-390:text-[25px]  text-lineblue pt-[24px] '>Engaging & Accessible Online </div>
                                 <div className='font-bold text-[48px] max-768:text-[30px] max-390:text-[25px]  text-lineblue'>Courses For All</div>
                             </div>
                             <div className=' pt-[40px]'>
-                                <div className='max-768:w-[100%] w-[856px] max-600:p-[20px]  p-[11px] h-[72px] max-600:h-[auto]  600:flex  600:justify-between  max-600:grid border-[1px] rounded-[10px] border-[#7A9EDD]'>
+                                <div className='bg-[#fff] max-768:w-[100%] w-[856px] max-600:p-[20px]  p-[11px] h-[72px] max-600:h-[auto]  600:flex  600:justify-between  max-600:grid border-[1px] rounded-[10px] border-[#7A9EDD]'>
                                     <div className='font-bold flex items-center justify-center max-600:justify-between'>
-                                        <p className='text-[14px] max-600:px-[15px] '>Select Category</p>
+                                        <div className='text-[14px] max-600:px-[15px] '>Select Category</div>
                                         <select className='' ></select>
                                     </div>
                                     <input className='max-600:w-[100%] max-600:border-[1px] max-600:rounded-[10px] max-600:border-[#7A9EDD] w-[50%] max-600:mt-[25px] max-600:mb-[13px] max-600:px-[16px] max-600:py-[15px] ' placeholder='Search School, Online eductional centers, etc' />
@@ -131,8 +232,8 @@ const DreamPage = () => {
                                 </div>
                                 <div className='pt-[25px]'>
                                     <p className='text-lineblue font-medium'>Trusted by over 15K Users worldwide since 2022</p>
-                                    <div className='pt-[16px] font-bold'>
-                                        <p className='flex text-[#21B477] justify-start text-[15px]'>4.4
+                                    <div className='pt-[16px] '>
+                                        <p className='font-bold flex text-[#21B477] justify-start text-[15px]'>4.4
                                             <img className='pl-[5px]' src={stargreen} alt="" />
                                             <img className='pl-[5px]' src={stargreen} alt="" />
                                             <img className='pl-[5px]' src={stargreen} alt="" />
@@ -143,11 +244,11 @@ const DreamPage = () => {
                                 </div>
                             </div>
                             <div className='h-[230px]'>
-                        </div>
+                            </div>
                         </div>
 
                     </div>
-                    <div className='mx-[300px] grid grid-cols-2 max-1618:mx-[72px] max-1162:mx-[2px] max-768:grid-cols-1'>
+                    <div className='mx-[300px] grid grid-cols-2 max-1618:mx-[72px] max-1162:mx-[40px] max-768:grid-cols-1'>
                         <div className='px-[12px] max-768:order-2 max-600:order-1'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>Learn with DreamLMS</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Get Trained By Experts & Professionals
@@ -200,7 +301,7 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px] max-600:px-0 bg-[#FBFCFF] bg-gradient-to-b from-[#FFFFFF] via-[#E0EBFF] to-[#FFFFFF]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[40px] max-600:px-[12px] max-600:px-0 bg-[#FBFCFF] bg-gradient-to-b from-[#FFFFFF] via-[#E0EBFF] to-[#FFFFFF]'>
                         <div className='text-center'>
                             <span className=' text-[20px] leading-[150%] text-green1920 font-semibold max-1041:text-orange1040'>Favourite Course</span>
                             <h1 className='text-[32px] font-bold text-[#4F4F4F] leading-[120%]  pt-[15px] pb-[24px] max-600:text-[20px]'>Top Category</h1>
@@ -271,7 +372,7 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px] '>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[40px] max-600:px-[12px] '>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>What's New</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Featured Courses</h1>
@@ -289,11 +390,11 @@ const DreamPage = () => {
                                     <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                     203 reviews
                                 </p>
-                                <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] p-[10px]'>The Complete Web Developer PHP framework Course 2.0</h1>
+                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] p-[10px]  '>The Complete Web Developer PHP framework Course 2.0</h1>
                                 <div className='text-[14px] font-normal'>By <span className='text-[#FF0100] '>Russell T. Johnson</span></div>
                                 <div className='flex justify-between pt-[33px]'>
-                                    <div className='w-[25%] flex text-[14px] text-[#5C5C5C] font-medium leading-[150%]'>
-                                        <img className='pr-[8px]' src={time} alt="" />
+                                    <div className=' w-[25%] flex text-[14px] text-[#5C5C5C] font-medium leading-[150%]'>
+                                        <img className='pr-[8px] ' src={time} alt="" />
                                         <span className=''>6hr 30min</span>
                                     </div>
                                     <div>
@@ -311,7 +412,7 @@ const DreamPage = () => {
                                     <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                     243 reviews
                                 </p>
-                                <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] p-[10px]'>Wordpress for Beginners - Master Wordpress Quickly</h1>
+                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] p-[10px]  '>Wordpress for Beginners - Master Wordpress Quickly</h1>
                                 <div className='text-[14px] font-normal'>By <span className='text-[#FF0100] '>Cristofer Nolen</span></div>
                                 <div className='flex justify-between pt-[33px]'>
                                     <div className='w-[25%] flex text-[14px] text-[#5C5C5C] font-medium leading-[150%]'>
@@ -334,7 +435,7 @@ const DreamPage = () => {
                                     <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                     243 reviews
                                 </p>
-                                <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] p-[10px]'>Learn Angular Fundamentals From beginning to advance lavel</h1>
+                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] p-[10px]  '>Learn Angular Fundamentals From beginning to advance lavel</h1>
                                 <div className='text-[14px] font-normal'>By <span className='text-[#FF0100] '>Cristofer Nolen</span></div>
                                 <div className='flex justify-between pt-[33px]'>
                                     <div className='flex text-[14px] text-[#5C5C5C] font-medium leading-[150%]'>
@@ -356,7 +457,7 @@ const DreamPage = () => {
                                     <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                     243 reviews
                                 </p>
-                                <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] p-[10px]'>Build Responsive Real World Websites with HTML5 and CSS3</h1>
+                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] p-[10px]  '>Build Responsive Real World Websites with HTML5 and CSS3</h1>
                                 <div className='text-[14px] font-normal'>By <span className='text-[#FF0100] '>Cristofer Nolen</span></div>
                                 <div className='flex justify-between pt-[33px]'>
                                     <div className='w-[25%] flex text-[14px] text-[#5C5C5C] font-medium leading-[150%]'>
@@ -378,7 +479,7 @@ const DreamPage = () => {
                                     <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                     243 reviews
                                 </p>
-                                <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] p-[10px]'>C# Developers Double Your Coding Speed with Visual Studio</h1>
+                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] p-[10px]  '>C# Developers Double Your Coding Speed with Visual Studio</h1>
                                 <div className='text-[14px] font-normal'>By <span className='text-[#FF0100] '>Cristofer Nolen</span></div>
                                 <div className='flex justify-between pt-[33px]'>
                                     <div className='w-[25%] flex text-[14px] text-[#5C5C5C] font-medium leading-[150%]'>
@@ -400,7 +501,7 @@ const DreamPage = () => {
                                     <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                     243 reviews
                                 </p>
-                                <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] p-[10px]'>Information About UI/UX Design Degree</h1>
+                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] p-[10px]  '>Information About UI/UX Design Degree</h1>
                                 <div className='text-[14px] font-normal'>By <span className='text-[#FF0100] '>Cristofer Nolen</span></div>
                                 <div className='flex justify-between pt-[33px]'>
                                     <div className='w-[25%] flex text-[14px] text-[#5C5C5C] font-medium leading-[150%]'>
@@ -418,7 +519,7 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[40px] max-600:px-[12px]'>
                         <div className='pt-[80px] grid grid-cols-2 max-768:grid-cols-1'>
                             <div><img className='mx-[75px] max-1040:m-0 max-768:mx-auto ' src={skil1} alt="" /></div>
                             <div className='my-auto p-[12px]'>
@@ -438,7 +539,7 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[40px] max-600:px-[12px]'>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>What's New</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Master the skills to drive your career</h1>
@@ -499,7 +600,7 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  mx-auto max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[40px] max-600:px-[12px] mx-auto '>
                         <img className='mx-auto' src={user} alt="" />
                         <div className=' mx-auto text-center pt-[50px] '>
                             <h1 className='text-[32px] font-bold leading-[120%] text-[#4F4F4F] max-600:text-[20px] '>Join over <span className='text-[#1E7115] max-1041:text-orange1040'>5 Million</span> Students</h1>
@@ -523,7 +624,7 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[40px] max-600:px-[12px]'>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>New Courses</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Trending Courses</h1>
@@ -625,7 +726,7 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px] grid grid-cols-2 max-1040:grid-cols-1 gap-[24px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[40px] max-600:px-[12px] grid grid-cols-2 max-1040:grid-cols-1 gap-[24px]'>
                         <img className='h-[100%] max-1040:mx-auto rounded-[10px]' src={feature} alt="" />
                         <div className='p-[20px] max-600:p-0'>
                             <h1 className='text-[#5C5C5C] text-[32px] font-bold leading-[120%] max-600:text-[20px]'>Want to share your knowledge?</h1>
@@ -665,7 +766,7 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px] '>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[40px] max-600:px-[12px] '>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>New Courses</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Featured Instructor</h1>
@@ -727,7 +828,7 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:py-bottom-[0px] max-1618:px-[72px] max-1162:px-[40px] max-600:px-[12px]'>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>Check out these real reviews</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Users-love-us Don't take it from us</h1>
@@ -769,14 +870,14 @@ const DreamPage = () => {
                             <img className='mx-auto' src={lead6} alt="" />
                         </div>
 
-                        <div className='pt-[70px] grid grid-cols-3 700:hidden 900:hidden'>
+                        <div className='pt-[70px] grid grid-cols-3 gap-[24px] 700:hidden 900:hidden'>
                             <img className='mx-auto' src={lead1} alt="" />
                             <img className='mx-auto' src={lead2} alt="" />
                             <img className='mx-auto' src={lead3} alt="" />
 
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[40px] max-600:px-[12px]'>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>News & Events</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Our Latest Updates</h1>
@@ -785,9 +886,9 @@ const DreamPage = () => {
                         </div>
                         <div className=' flex justify-center flex-wrap'>
                             <div className="relative p-[12px] ">
-                                <div class='relative'>
-                                    <img class=' w-[100%] rounded-[5px]' src={blog1} alt="Your Image" />
-                                    <div class='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#0000001B] to-[#000000B2] rounded-[5px]'></div>
+                                <div className='relative'>
+                                    <img className=' w-[100%] rounded-[5px]' src={blog1} alt="Your Image" />
+                                    <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#0000001B] to-[#000000B2] rounded-[5px]'></div>
                                 </div>
                                 <div className=" m-[20px]   absolute bottom-0 left-0  ">
                                     <p className="bg-[#21B477] p-[5px] rounded-[4px] w-[90px] text-white text-[16px] font-bold leading-[150%] ">Marketing</p>
@@ -800,9 +901,9 @@ const DreamPage = () => {
                                 </div>
                             </div>
                             <div className="relative p-[12px]">
-                                <div class='relative'>
-                                    <img class='w-[100%] rounded-[5px]' src={blog2} alt="Your Image" />
-                                    <div class='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#0000001B] to-[#000000B2] rounded-[5px]'></div>
+                                <div className='relative'>
+                                    <img className='w-[100%] rounded-[5px]' src={blog2} alt="Your Image" />
+                                    <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#0000001B] to-[#000000B2] rounded-[5px]'></div>
                                 </div>
                                 <div className="p-[20px] absolute bottom-0 left-0  ">
                                     <p className="bg-[#21B477] p-[5px] rounded-[4px] w-[90px] text-white text-[16px] font-bold leading-[150%] ">Sales</p>
@@ -815,9 +916,9 @@ const DreamPage = () => {
                                 </div>
                             </div>
                             <div className="relative p-[12px]">
-                                <div class='relative'>
-                                    <img class='w-[100%] rounded-[5px]' src={blog3} alt="Your Image" />
-                                    <div class='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#0000001B] to-[#000000B2] rounded-[5px]'></div>
+                                <div className='relative'>
+                                    <img className='w-[100%] rounded-[5px]' src={blog3} alt="Your Image" />
+                                    <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#0000001B] to-[#000000B2] rounded-[5px]'></div>
                                 </div>
                                 <div className="p-[20px] absolute bottom-0 left-0  ">
                                     <p className="bg-[#21B477] p-[5px] rounded-[4px] w-[90px] text-white text-[16px] font-bold leading-[150%] ">Marketing</p>
@@ -835,7 +936,7 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[12px]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1162:px-[40px] max-600:px-[12px]'>
                         <div className=' grid grid-cols-6 max-768:grid-cols-2 max-768:grid-rows-2 max-460:grid-cols-1 max-460:text-center'>
                             <div className='p-[12px] col-span-2 max-768:grid-cols-1 max-768:grid-rows-1 max-768:col-span-1  '>
                                 <img className='w-[50%] max-460:mx-auto' src={logo} alt="" />
