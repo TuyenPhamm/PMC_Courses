@@ -4,6 +4,10 @@ import {
     SwipeableDrawer, ListItemIcon, Divider, Button, Box,
     Menu, MenuItem
 } from '@mui/material';
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+
+import Buttonn from "@material-ui/core/Button";
+import Menuu from "@material-ui/core/Menu";
 import {
     logo,
     background, background1, background2,
@@ -30,12 +34,14 @@ import {
     blog1, blog2, blog3
 } from './image.jsx'
 
-type Anchor = ' ' | 'right';
+type Anchor = " " | 'right';
 
 const DreamPage = () => {
-    const [state, setState] = React.useState({
-        bool: false,
+    const [state, setState] = React.useState<{ [key in Anchor]: boolean }>({
+        " ": false,
+        "right": false
     });
+
     const toggleDrawer =
         (anchor: Anchor, open: boolean) =>
             (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -49,6 +55,7 @@ const DreamPage = () => {
                 }
                 setState({ ...state, [anchor]: open });
             };
+
     const list = (anchor: Anchor) => (
         <Box
             sx={{ width: 260 }}
@@ -57,13 +64,13 @@ const DreamPage = () => {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                <div className='flex  bg-white h-[60px]'>
+                <div className='grid grid-cols-2 bg-white '>
                     <img className='' src={logo} alt="" />
                     <button>
-                        <img className='w-[16px] h-[18px] my-auto ml-[80px]  ' src={close} alt="" />
+                        <img className='w-[16px] h-[18px] my-auto ml-[80px] ' src={close} alt="" />
                     </button>
                 </div>
-                <div className='pb-[993px] bg-[#F66962]'>
+                <div className='pb-[993px] bg-[#F66962] pl-[20px]'>
                     {['Home ', 'Instructor', 'Student', 'Page', 'Blog', 'Login / Signup'].map((text, index) => (
                         <ListItem className='text-[#fff] bg-[#F66962] ' key={text} disablePadding>
                             <ListItemButton>
@@ -78,14 +85,50 @@ const DreamPage = () => {
             </List>
         </Box>
     );
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-    const open = Boolean(anchorEl);
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+
+    const theme = createTheme({});
+    const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
+        setOpen(true);
     };
-    const handleClose = () => {
-        setAnchorEl(null);
+
+    const handleClose = (e: React.MouseEvent<HTMLElement>) => {
+        if (e.currentTarget.localName !== "ul") {
+            const menu = document.getElementById("simple-menu")
+                ?.children[2] as HTMLElement | null;
+            if (!menu) return;
+
+            const menuBoundary = {
+                left: menu.offsetLeft,
+                top: menu.offsetTop + menu.offsetHeight,
+                right: menu.offsetLeft + menu.offsetWidth,
+                bottom: menu.offsetTop + menu.offsetHeight
+            };
+            if (
+                e.clientX < menuBoundary.left ||
+                e.clientX > menuBoundary.right ||
+                e.clientY < menuBoundary.top ||
+                e.clientY > menuBoundary.bottom
+            ) {
+                setOpen(false);
+            }
+        }
+        setOpen(false);
     };
+
+    theme.props = {
+        MuiList: {
+            onMouseLeave: (e: React.MouseEvent<HTMLElement>) => {
+                handleClose(e);
+            }
+        }
+    };
+
+
+
     return (
         <div className=' relative'>
             <div className=" relative bg-no-repeat bg-cover bg-center h-screen w-full" style={{ backgroundImage: `url(${background})` }}>
@@ -100,12 +143,11 @@ const DreamPage = () => {
                         <div className='max-900:px-[40px] max-600:px-[12px]  h-[70px] pt-[20px] mx-[300px] max-1618:mx-[72px] max-1162:mx-[2px] px-[12px] flex items-center justify-between '>
                             <div className='flex  max-600:w-[100%]'>
                                 <button>
-                                    <div className='absolute 900:hidden text-white'>
+                                    <div className=' absolute 900:hidden text-white py-0'>
                                         {([' '] as const).map((anchor) => (
                                             <React.Fragment key={anchor}>
-                                                <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+                                                <Button className='h-[30px] p-0 ' onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
                                                 <SwipeableDrawer
-                                                    // anchor={anchor}
                                                     open={state[anchor]}
                                                     onClose={toggleDrawer(anchor, false)}
                                                     onOpen={toggleDrawer(anchor, true)}
@@ -121,93 +163,164 @@ const DreamPage = () => {
                             </div>
                             <div className=' text-textColor text-[15px] flex flex-wrap gap-[20px] max-1040:text-[13px] max-900:hidden'>
                                 <div className=' '>
-                                    <Button className='hover:text-[#F66962]'
-                                        id="basic-button1"
-                                        aria-controls={open ? 'basic-menu1' : undefined}
-                                        aria-haspopup="true"
-                                        aria-expanded={open ? 'true' : undefined}
-                                        onClick={handleClick}
-                                    >
-                                        Home
-                                    </Button>
-                                    <Menu
-                                        id="basic-menu1"
-                                        anchorEl={anchorEl}
-                                        open={open}
-                                        onClose={handleClose}
-                                        MenuListProps={{
-                                            'aria-labelledby': 'basic-button1',
-                                        }}
-                                    >
-                                        <MenuItem onClick={handleClose}>1</MenuItem>
-                                        <MenuItem onClick={handleClose}>2</MenuItem>
-                                        <MenuItem onClick={handleClose}>3</MenuItem>
-                                    </Menu>
-
+                                    <ThemeProvider theme={theme}>
+                                        <Buttonn
+                                            id="menubutton1"
+                                            aria-owns={open ? "simple-menu1" : undefined}
+                                            aria-haspopup="true"
+                                            onMouseEnter={handleOpen}
+                                            onMouseLeave={handleClose}
+                                            style={{ zIndex: 1301 }}
+                                        >
+                                            <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Home</span>
+                                            <div className="my-auto mx-auto border-textColor h-[10px] w-[10px] border-b-2 border-r-2 transform rotate-45 "></div>
+                                        </Buttonn>
+                                        <Menuu className='p-[20px]'
+                                            id="simple-menu1"
+                                            anchorEl={anchorEl}
+                                            open={open}
+                                            anchorOrigin={{
+                                                vertical: "bottom",
+                                                horizontal: "center"
+                                            }}
+                                            transformOrigin={{
+                                                vertical: "top",
+                                                horizontal: "center"
+                                            }}
+                                        >
+                                            hai
+                                            <br />
+                                            hai
+                                        </Menuu>
+                                    </ThemeProvider>
                                 </div>
                                 <div className=' '>
-                                    <Button className='hover:text-[#F66962] '
-                                        id="basic-button2"
-                                        aria-controls={open ? 'basic-menu2' : undefined}
-                                        aria-haspopup="true"
-                                        aria-expanded={open ? 'true' : undefined}
-                                        onClick={handleClick}
-                                    >
-                                        Instructor
-                                    </Button>
-                                    <Menu
-                                    id="basic-menu2"
-                                    anchorEl={anchorEl}
-                                    open={open}
-                                    onClose={handleClose}
-                                    MenuListProps={{
-                                        'aria-labelledby': 'basic-button2',
-                                    }}
-                                    >
-                                        <MenuItem onClick={handleClose}>3</MenuItem>
-                                        <MenuItem onClick={handleClose}>4</MenuItem>
-                                        <MenuItem onClick={handleClose}>5</MenuItem>
-                                    </Menu>
+                                    <ThemeProvider theme={theme}>
+                                        <Buttonn
+                                            id="menubutton2"
+                                            aria-owns={open ? "simple-menu2" : undefined}
+                                            aria-haspopup="true"
+                                            onMouseOver={handleOpen}
+                                            onMouseLeave={handleClose}
+                                            style={{ zIndex: 1301 }}
+                                        >
+                                            <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Intructor</span>
+                                            <div className="my-auto mx-auto border-textColor h-[10px] w-[10px] border-b-2 border-r-2 transform rotate-45 "></div>
+                                        </Buttonn>
+                                        <Menuu
+                                            id="simple-menu2"
+                                            anchorEl={anchorEl}
+                                            open={open}
+                                            anchorOrigin={{
+                                                vertical: "bottom",
+                                                horizontal: "center"
+                                            }}
+                                            transformOrigin={{
+                                                vertical: "top",
+                                                horizontal: "center"
+                                            }}
+                                        >
+                                            mot
+                                            <br />
+                                            hai
+                                        </Menuu>
+                                    </ThemeProvider>
                                 </div>
                                 <div className=' '>
-                                    <Button className='hover:text-[#F66962] '
-                                        id="basic-button"
-                                        aria-controls={open ? 'basic-menu' : undefined}
-                                        aria-haspopup="true"
-                                        aria-expanded={open ? 'true' : undefined}
-                                        onClick={handleClick}
-                                    >
-                                        Student
-                                    </Button>
-
+                                    <ThemeProvider theme={theme}>
+                                        <Buttonn
+                                            id="menubutton3"
+                                            aria-owns={open ? "simple-menu3" : undefined}
+                                            aria-haspopup="true"
+                                            onMouseOver={handleOpen}
+                                            onMouseLeave={handleClose}
+                                            style={{ zIndex: 1301 }}
+                                        >
+                                            <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Student</span>
+                                            <div className="my-auto mx-auto border-textColor h-[10px] w-[10px] border-b-2 border-r-2 transform rotate-45 "></div>
+                                        </Buttonn>
+                                        <Menuu
+                                            id="simple-menu3"
+                                            anchorEl={anchorEl}
+                                            open={open}
+                                            anchorOrigin={{
+                                                vertical: "bottom",
+                                                horizontal: "center"
+                                            }}
+                                            transformOrigin={{
+                                                vertical: "top",
+                                                horizontal: "center"
+                                            }}
+                                        >
+                                            mot
+                                            <br />
+                                            hai
+                                        </Menuu>
+                                    </ThemeProvider>
                                 </div>
                                 <div className=' '>
-                                    <Button className='hover:text-[#F66962] '
-                                        id="basic-button"
-                                        aria-controls={open ? 'basic-menu' : undefined}
-                                        aria-haspopup="true"
-                                        aria-expanded={open ? 'true' : undefined}
-                                        onClick={handleClick}
-                                    >
-                                        Pages
-                                        
-                                    </Button>
-
-
+                                    <ThemeProvider theme={theme}>
+                                        <Buttonn
+                                            id="menubutton4"
+                                            aria-owns={open ? "simple-menu4" : undefined}
+                                            aria-haspopup="true"
+                                            onMouseOver={handleOpen}
+                                            onMouseLeave={handleClose}
+                                            style={{ zIndex: 1301 }}
+                                        >
+                                            <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Pages</span>
+                                            <div className="my-auto mx-auto border-textColor h-[10px] w-[10px] border-b-2 border-r-2 transform rotate-45 "></div>
+                                        </Buttonn>
+                                        <Menuu
+                                            id="simple-menu4"
+                                            anchorEl={anchorEl}
+                                            open={open}
+                                            anchorOrigin={{
+                                                vertical: "bottom",
+                                                horizontal: "center"
+                                            }}
+                                            transformOrigin={{
+                                                vertical: "top",
+                                                horizontal: "center"
+                                            }}
+                                        >
+                                            mot
+                                            <br />
+                                            hai
+                                        </Menuu>
+                                    </ThemeProvider>
                                 </div>
                                 <div className=' '>
-                                    <Button className='hover:text-[#F66962] '
-                                        id="basic-button"
-                                        aria-controls={open ? 'basic-menu' : undefined}
-                                        aria-haspopup="true"
-                                        aria-expanded={open ? 'true' : undefined}
-                                        onClick={handleClick}
-                                    >
-                                        Blog
-                                        
-                                    </Button>
-
-
+                                    <ThemeProvider theme={theme}>
+                                        <Buttonn
+                                            id="menubutton5"
+                                            aria-owns={open ? "simple-menu5" : undefined}
+                                            aria-haspopup="true"
+                                            onMouseOver={handleOpen}
+                                            onMouseLeave={handleClose}
+                                            style={{ zIndex: 1301 }}
+                                        >
+                                            <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Blog</span>
+                                            <div className="my-auto mx-auto border-textColor h-[10px] w-[10px] border-b-2 border-r-2 transform rotate-45 "></div>
+                                        </Buttonn>
+                                        <Menuu
+                                            id="simple-menu5"
+                                            anchorEl={anchorEl}
+                                            open={open}
+                                            anchorOrigin={{
+                                                vertical: "bottom",
+                                                horizontal: "center"
+                                            }}
+                                            transformOrigin={{
+                                                vertical: "top",
+                                                horizontal: "center"
+                                            }}
+                                        >
+                                            mot
+                                            <br />
+                                            hai
+                                        </Menuu>
+                                    </ThemeProvider>
                                 </div>
                             </div>
                             <div className='flex font-bold max-600:hidden'>
