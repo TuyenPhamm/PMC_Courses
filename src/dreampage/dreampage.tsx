@@ -387,7 +387,7 @@ const DreamPage = () => {
                             </button>
                         </div>
 
-                        <div className='  max-769:order-1 max-600:order-2 max-600:grid-cols-1 px-[12px] grid grid-rows-2 grid-cols-2 gap-[24px] text-center bg-gradient-to-b max-600:bg-gradient-to-r from-[#FFFFFF] via-[#E0EBFF] to-[#FFFFFF] '>
+                        <div className='  max-769:order-1 max-600:order-2 max-600:grid-cols-1 px-[12px] grid grid-rows-2 grid-cols-2 gap-[24px] text-center bg-[#F5F5F5] '>
                             <div className=' grid-cols-1 grid-rows-1 bg-[#fff]  h-[300px] rounded-[10px]'>
                                 <div className=' my-[70px]'>
                                     <img className='mx-auto my-[auto] pb-[20px]' src={one} alt="" />
@@ -423,7 +423,7 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-0 bg-[#FBFCFF] bg-gradient-to-b from-[#FFFFFF] via-[#E0EBFF] to-[#FFFFFF]'>
+                    <div className='px-[300px] py-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-831:px-[30px] max-769:px-[12px]  max-600:px-0 bg-[#F5F5F5]'>
                         <div className='text-center mb-[50px]'>
                             <span className=' text-[20px] leading-[150%] text-green1920 font-semibold max-1041:text-orange1040'>Favourite Course</span>
                             <h1 className='text-[32px] font-bold text-[#4F4F4F] leading-[120%]  pt-[15px] pb-[24px] max-600:text-[20px]'>Top Category</h1>
@@ -431,57 +431,57 @@ const DreamPage = () => {
                                 gravida maecenas augue elementum et neque. Suspendisse imperdiet.
                             </p>
                         </div>
-                        <div className='grid grid-rows-2 grid-cols-4 max-768:grid-rows-4 max-768:grid-cols-2 max-600:grid-cols-1  gap-[24px] py-[12px] bg-gradient-to-b max-600:bg-gradient-to-r from-[#FFFFFF] via-[#E0EBFF] to-[#FFFFFF]'>
-                            <div className='grid-cols-1 grid-rows-1 p-[31px] max-426:p-0 bg-white  rounded-[10px]'>
+                        <div className='grid grid-rows-2 grid-cols-4 max-768:grid-rows-4 max-768:grid-cols-2 max-600:grid-cols-1  gap-[24px] py-[12px] '>
+                            <div className='grid-cols-1 grid-rows-1 p-[31px]  bg-[#fff]  rounded-[10px]'>
                                 <img src={category1} alt="" />
                                 <div>
                                     <p className='text-colortextcategory text-[20px] font-bold leading-[120%] max-1025:h-[48px]'>Angular Development</p>
                                     <p className='text-[16px] font-normal leading-[150%] text-[#22100D]'>40 Instructors</p>
                                 </div>
                             </div>
-                            <div className='grid-cols-1 grid-rows-1 p-[31px] max-426:p-0 bg-white  rounded-[10px]'>
+                            <div className='grid-cols-1 grid-rows-1 p-[31px]  bg-white  rounded-[10px]'>
                                 <img src={category2} alt="" />
                                 <div>
                                     <p className='text-colortextcategory text-[20px] font-bold leading-[120%] max-1025:h-[48px]'>Python Development</p>
                                     <p className='text-[16px] font-normal leading-[150%] text-[#22100D]'>20 Instructors</p>
                                 </div>
                             </div>
-                            <div className='grid-cols-1 grid-rows-1 p-[31px] max-426:p-0 bg-white  rounded-[10px]'>
+                            <div className='grid-cols-1 grid-rows-1 p-[31px]  bg-white  rounded-[10px]'>
                                 <img src={category3} alt="" />
                                 <div>
                                     <p className='text-colortextcategory text-[20px] font-bold leading-[120%] max-1025:h-[48px]'>Node Js Development</p>
                                     <p className='text-[16px] font-normal leading-[150%] text-[#22100D]'>120 Instructors</p>
                                 </div>
                             </div>
-                            <div className='grid-cols-1 grid-rows-1 p-[31px] max-426:p-0 bg-white  rounded-[10px]'>
+                            <div className='grid-cols-1 grid-rows-1 p-[31px]  bg-white  rounded-[10px]'>
                                 <img src={category4} alt="" />
                                 <div>
                                     <p className='text-colortextcategory text-[20px] font-bold leading-[120%] max-1025:h-[48px]'>PHP Development</p>
                                     <p className='text-[16px] font-normal leading-[150%] text-[#22100D]'>40 Instructors</p>
                                 </div>
                             </div>
-                            <div className='grid-cols-1 grid-rows-1 p-[31px] max-426:p-0 bg-white  rounded-[10px]'>
+                            <div className='grid-cols-1 grid-rows-1 p-[31px]  bg-white  rounded-[10px]'>
                                 <img src={category5} alt="" />
                                 <div>
                                     <p className='text-colortextcategory text-[20px] font-bold leading-[120%] max-1025:h-[48px]'>Docker Development</p>
                                     <p className='text-[16px] font-normal leading-[150%] text-[#22100D]'>40 Instructors</p>
                                 </div>
                             </div>
-                            <div className='grid-cols-1 grid-rows-1 p-[31px] max-426:p-0 bg-white  rounded-[10px]'>
+                            <div className='grid-cols-1 grid-rows-1 p-[31px]  bg-white  rounded-[10px]'>
                                 <img src={category6} alt="" />
                                 <div>
                                     <p className='text-colortextcategory text-[20px] font-bold leading-[120%] max-1025:h-[48px]'>Swift Development</p>
                                     <p className='text-[16px] font-normal leading-[150%] text-[#22100D]'>40 Instructors</p>
                                 </div>
                             </div>
-                            <div className='grid-cols-1 grid-rows-1 p-[31px] max-426:p-0 bg-white  rounded-[10px]'>
+                            <div className='grid-cols-1 grid-rows-1 p-[31px]  bg-white  rounded-[10px]'>
                                 <img src={category7} alt="" />
                                 <div>
                                     <p className='text-colortextcategory text-[20px] font-bold leading-[120%] max-1025:h-[48px]'>Photography</p>
                                     <p className='text-[16px] font-normal leading-[150%] text-[#22100D]'>40 Instructors</p>
                                 </div>
                             </div>
-                            <div className='grid-cols-1 grid-rows-1 p-[31px] max-426:p-0 bg-white  rounded-[10px]'>
+                            <div className='grid-cols-1 grid-rows-1 p-[31px]  bg-white  rounded-[10px]'>
                                 <img src={category8} alt="" />
                                 <div>
                                     <p className='text-colortextcategory text-[20px] font-bold leading-[120%] max-1025:h-[48px]'>Business</p>
@@ -494,15 +494,15 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[0] '>
+                    <div className='px-[300px] py-[60px] max-426:pt-[20px]  max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[0] bg-[#F5F5F5] '>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>What's New</span>
-                            <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Featured Courses</h1>
+                            <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[25px] max-600:text-[20px]'>Featured Courses</h1>
                             <p className='pb-[50px] text-[#5C5C5C] px-[298px] text-[16px] leading-[150%] max-1041:px-[75px] max-600:px-0 max-600:text-[16px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget aenean accumsan bibendum
                                 gravida maecenas augue elementum et neque. Suspendisse imperdiet.</p>
                         </div>
                         <div className='grid grid-rows-2 grid-cols-3 max-768:grid-rows-3 max-768:grid-cols-2 max-600:grid-cols-1 gap-[24px] p-[12px] max-426:p-0'>
-                            <div className='grid-cols-1 grid-rows-1 p-[6px]'>
+                            <div className='grid-cols-1 grid-rows-1 p-[6px] bg-[#fff]'>
                                 <img className='w-[100%]' src={couser1} alt="" />
                                 <p className='h-[40px] flex text-[#A5A5A5] justify-start text-[15px] pt-[20px]'>
                                     <img className='pl-[10px]' src={staryealow} alt="" />
@@ -512,7 +512,7 @@ const DreamPage = () => {
                                     <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                     203 reviews
                                 </p>
-                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] m-[10px] max-1441:h-[45px] max-1025:h-[65px] max-769:h-[75px] '>The Complete Web Developer PHP framework Course 2.0</h1>
+                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] m-[10px] max-1441:h-[45px] max-1025:h-[65px] max-1141:h-[75px] max-971:h-[80px] '>The Complete Web Developer PHP framework Course 2.0</h1>
                                 <div className='text-[14px] font-normal pl-[10px]'>By <span className='text-[#FF0100] '>Russell T. Johnson</span></div>
                                 <div className='flex justify-between pt-[33px]'>
                                     <div className=' w-[50%] flex text-[14px] text-[#5C5C5C] font-medium leading-[150%] pl-[10px]'>
@@ -524,7 +524,7 @@ const DreamPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='grid-cols-1 grid-rows-1 p-[6px]'>
+                            <div className='grid-cols-1 grid-rows-1 p-[6px] bg-[#fff]'>
                                 <img className='w-[100%]' src={couser2} alt="" />
                                 <p className='h-[40px] flex text-[#A5A5A5] justify-start text-[15px] pt-[20px]'>
                                     <img className='pl-[10px]' src={staryealow} alt="" />
@@ -534,7 +534,7 @@ const DreamPage = () => {
                                     <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                     243 reviews
                                 </p>
-                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] m-[10px] max-1441:h-[45px] max-1025:h-[65px] max-769:h-[75px] '>Wordpress for Beginners - Master Wordpress Quickly</h1>
+                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] m-[10px] max-1441:h-[45px] max-1025:h-[65px] max-1141:h-[75px] max-971:h-[80px] '>Wordpress for Beginners - Master Wordpress Quickly</h1>
                                 <div className='text-[14px] font-normal pl-[10px]'>By <span className='text-[#FF0100] '>Cristofer Nolen</span></div>
                                 <div className='flex justify-between pt-[33px]'>
                                     <div className='w-[50%] flex text-[14px] text-[#5C5C5C] font-medium leading-[150%] pl-[10px]'>
@@ -547,7 +547,7 @@ const DreamPage = () => {
                                 </div>
 
                             </div>
-                            <div className='grid-cols-1 grid-rows-1 p-[6px]'>
+                            <div className='grid-cols-1 grid-rows-1 p-[6px] bg-[#fff]'>
                                 <img className='w-[100%]' src={couser3} alt="" />
                                 <p className='h-[40px] flex text-[#A5A5A5] justify-start text-[15px] pt-[20px]'>
                                     <img className='pl-[10px]' src={staryealow} alt="" />
@@ -557,7 +557,7 @@ const DreamPage = () => {
                                     <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                     243 reviews
                                 </p>
-                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] m-[10px] max-1441:h-[45px] max-1025:h-[65px] max-769:h-[75px] '>Learn Angular Fundamentals From beginning to advance lavel</h1>
+                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] m-[10px] max-1441:h-[45px] max-1025:h-[65px] max-1141:h-[75px] max-971:h-[80px] '>Learn Angular Fundamentals From beginning to advance lavel</h1>
                                 <div className='text-[14px] font-normal pl-[10px]'>By <span className='text-[#FF0100] '>Cristofer Nolen</span></div>
                                 <div className='flex justify-between pt-[33px]'>
                                     <div className='w-[50%] flex text-[14px] text-[#5C5C5C] font-medium leading-[150%] pl-[10px]'>
@@ -569,7 +569,7 @@ const DreamPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='grid-cols-1 grid-rows-1 p-[6px]'>
+                            <div className='grid-cols-1 grid-rows-1 p-[6px] bg-[#fff]'>
                                 <img className='w-[100%]' src={couser4} alt="" />
                                 <p className='h-[40px] flex text-[#A5A5A5] justify-start text-[15px] pt-[20px]'>
                                     <img className='pl-[10px]' src={staryealow} alt="" />
@@ -579,7 +579,7 @@ const DreamPage = () => {
                                     <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                     243 reviews
                                 </p>
-                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] m-[10px] max-1441:h-[45px] max-1025:h-[65px] max-769:h-[75px] '>Build Responsive Real World Websites with HTML5 and CSS3</h1>
+                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] m-[10px] max-1441:h-[45px] max-1025:h-[65px] max-1141:h-[75px] max-971:h-[80px] '>Build Responsive Real World Websites with HTML5 and CSS3</h1>
                                 <div className='text-[14px] font-normal pl-[10px]'>By <span className='text-[#FF0100] '>Cristofer Nolen</span></div>
                                 <div className='flex justify-between pt-[33px]'>
                                     <div className='w-[50%] flex text-[14px] text-[#5C5C5C] font-medium leading-[150%] pl-[10px]'>
@@ -591,7 +591,7 @@ const DreamPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='grid-cols-1 grid-rows-1 p-[6px]'>
+                            <div className='grid-cols-1 grid-rows-1 p-[6px] bg-[#fff]'>
                                 <img className='w-[100%]' src={couser5} alt="" />
                                 <p className='h-[40px] flex text-[#A5A5A5] justify-start text-[15px] pt-[20px]'>
                                     <img className='pl-[10px]' src={staryealow} alt="" />
@@ -601,7 +601,7 @@ const DreamPage = () => {
                                     <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                     243 reviews
                                 </p>
-                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] m-[10px] max-1441:h-[45px] max-1025:h-[65px] max-769:h-[75px] '>C# Developers Double Your Coding Speed with Visual Studio</h1>
+                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] m-[10px] max-1441:h-[45px] max-1025:h-[65px] max-1141:h-[75px] max-971:h-[80px] '>C# Developers Double Your Coding Speed with Visual Studio</h1>
                                 <div className='text-[14px] font-normal pl-[10px]'>By <span className='text-[#FF0100] '>Cristofer Nolen</span></div>
                                 <div className='flex justify-between pt-[33px]'>
                                     <div className='w-[50%] flex text-[14px] text-[#5C5C5C] font-medium leading-[150%] pl-[10px]'>
@@ -613,7 +613,7 @@ const DreamPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='grid-cols-1 grid-rows-1 p-[6px]'>
+                            <div className='grid-cols-1 grid-rows-1 p-[6px] bg-[#fff]'>
                                 <img className='w-[100%]' src={couser6} alt="" />
                                 <p className='h-[40px] flex text-[#A5A5A5] justify-start text-[15px] pt-[20px]'>
                                     <img className='pl-[10px]' src={staryealow} alt="" />
@@ -623,7 +623,7 @@ const DreamPage = () => {
                                     <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                     243 reviews
                                 </p>
-                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] m-[10px] max-1441:h-[45px] max-1025:h-[65px] max-769:h-[75px] '>Information About UI/UX Design Degree</h1>
+                                <h1 className='text-[#324FA2] text-[18px] font-bold leading-[120%] m-[10px] max-1441:h-[45px] max-1025:h-[65px] max-1141:h-[75px] max-971:h-[80px] '>Information About UI/UX Design Degree</h1>
                                 <div className='text-[14px] font-normal pl-[10px]'>By <span className='text-[#FF0100]  '>Cristofer Nolen</span></div>
                                 <div className='flex justify-between pt-[33px]'>
                                     <div className='w-[50%] flex text-[14px] text-[#5C5C5C] font-medium leading-[150%] pl-[10px]'>
@@ -641,8 +641,8 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0]'>
-                        <div className='pt-[80px] grid grid-cols-2 max-768:grid-cols-1'>
+                    <div className='px-[300px] py-[60px] max-426:pt-[20px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0]'>
+                        <div className='pt-[80px] max-426:pt-[20px] grid grid-cols-2 max-768:grid-cols-1'>
                             <div><img className='mx-[75px] max-1040:m-0 mx-auto ' src={skil1} alt="" /></div>
                             <div className='my-auto p-[12px] max-426:px-0'>
                                 <span className=' text-[20px] leading-[150%] text-green1920 font-semibold max-1041:text-orange1040'>Growup Your Skill</span>
@@ -661,16 +661,16 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px]  max-600:px-[0]'>
+                    <div className='px-[300px] py-[60px] max-426:pt-[20px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px]  max-600:px-[0] bg-[#F5F5F5]'>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>What's New</span>
-                            <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Master the skills to drive your career</h1>
+                            <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[25px] max-600:text-[20px]'>Master the skills to drive your career</h1>
                             <p className='pb-[50px] px-[298px] text-[#5C5C5C] text-[16px] leading-[150%] max-1041:px-[75px] max-769:px-[12px] max-600:px-0 max-600:text-[16px]'>Get certified, master modern tech skills, and level up your career — whether you’re starting
                                 out or a seasoned pro. 95% of eLearning learners report our hands-on content directly
                                 helped their careers.</p>
                         </div>
                         <div>
-                            <div className='grid grid-cols-2 pt-[50px] max-900:grid-cols-1 '>
+                            <div className='grid grid-cols-2 pt-[50px] max-426:pt-[20px] max-900:grid-cols-1 '>
                                 <div className='my-auto text-right pr-[90px] max-1025:pr-[60px] max-900:pr-0 max-900:text-center'>
                                     <h1 className='text-[#5C5C5C] text-[36px] font-bold leading-[120%] max-1025:text-[24px] max-600:text-[20px] pb-[25px]'>Award Winning Course Management</h1>
                                     <p className='text-[16px] max-1025:text-[14px] max-600:px-0 max-769:p-[12px] max-426:p-0 max-600:text-[14px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam dolor
@@ -722,14 +722,14 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px]  max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0] mx-auto '>
-                        <img className='mx-auto pt-[50px]' src={user} alt="" />
+                    <div className='px-[300px] py-[60px]  max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0] mx-auto bg-[#F5F5F5]'>
+                        <img className='mx-auto pt-[50px] max-426:pt-0' src={user} alt="" />
                         <div className=' mx-auto text-center pt-[50px] '>
                             <h1 className='text-[32px] font-bold leading-[120%] text-[#4F4F4F] max-600:text-[20px] pb-[25px]'>Join over <span className='text-[#1E7115] max-1041:text-orange1040'>5 Million</span> Students</h1>
                             <p className='pb-[50px] px-[298px] text-[#5C5C5C] text-[16px] leading-[150%] max-1041:px-[75px] max-769:px-[12px] max-600:px-0 max-600:text-[16px]'>Get certified, master modern tech skills, and level up your career — whether you’re starting
                                 out or a seasoned pro. 95% of eLearning learners report our hands-on content directly
                                 helped their careers.</p>
-                            <div className='flex justify-between px-[12px] pt-[50px] max-768:grid max-768:grid-cols-2 max-460:grid-cols-1 max-768:grid-rows-2 max-600:text-[16px] '>
+                            <div className='flex justify-between px-[12px] pt-[50px] max-426:pt-0 max-768:grid max-768:grid-cols-2 max-460:grid-cols-1 max-768:grid-rows-2 max-600:text-[16px] '>
                                 <div className='max-460:pt-[20px]'>
                                     <p className='text-[24px] font-medium leading-[120%] text-orange1040 max-600:text-[20px] pb-[8px]'>253,085</p>
                                     <p className='text-[20px] text-[#5C5C5C] leading-[120%] uppercase '>Students Enrolled</p>
@@ -746,11 +746,11 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0] max-426:pt-0 bg-[#F5F5F5]'>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>New Courses</span>
-                            <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Trending Courses</h1>
-                            <p className='pb-[50px] text-[#5C5C5C] px-[298px] text-[16px] leading-[150%] max-1041:px-[75px] max-769:px-[12px] max-600:px-0 max-600:text-[16px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget aenean accumsan bibendum
+                            <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[25px] max-600:text-[20px]'>Trending Courses</h1>
+                            <p className='pb-[50px] max-426:pb-[21px] text-[#5C5C5C] px-[298px] text-[16px] leading-[150%] max-1041:px-[75px] max-769:px-[12px] max-600:px-0 max-600:text-[16px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget aenean accumsan bibendum
                                 gravida maecenas augue elementum et neque. Suspendisse imperdiet.</p>
                         </div>
                         <div className='bg-[#fff] pt-[50px] grid grid-rows-2 grid-cols-2 gap-[24px] p-[24px] max-1025:p-0 max-460:p-0 max-900:grid-cols-1 '>
@@ -848,7 +848,7 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0] grid grid-cols-2 max-1040:grid-cols-1 gap-[24px]'>
+                    <div className='px-[300px] py-[60px] max-426:pt-[20px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0] grid grid-cols-2 max-1040:grid-cols-1 gap-[24px]'>
                         <img className='h-[100%] max-1040:mx-auto rounded-[10px]' src={feature} alt="" />
                         <div className='p-[20px] max-600:p-0 max-w-[783px]'>
                             <h1 className='text-[#5C5C5C] text-[32px] font-bold leading-[120%] max-600:text-[20px]'>Want to share your knowledge?</h1>
@@ -891,8 +891,8 @@ const DreamPage = () => {
                     <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0] '>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>New Courses</span>
-                            <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Featured Instructor</h1>
-                            <p className='pb-[50px] text-[#5C5C5C] px-[298px] text-[16px] leading-[150%] max-1041:px-[75px] max-460:px-[12px] max-600:text-[16px] max-769:px-[0px] max-426:p-0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget aenean accumsan bibendum
+                            <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[25px] max-600:text-[20px]'>Featured Instructor</h1>
+                            <p className='pb-[50px] text-[#5C5C5C] px-[298px] text-[16px] leading-[150%] max-1041:px-[75px] max-460:px-[12px] max-600:text-[16px] max-769:px-[0px] max-426:px-0 max-426:pb-[21px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget aenean accumsan bibendum
                                 gravida maecenas augue elementum et neque. Suspendisse imperdiet.</p>
                         </div>
                         <div className='grid grid-cols-4 max-900:grid-cols-2 max-900:grid-rows-2 max-600:grid-cols-1 px-[12px] gap-[24px] max-426:px-0'>
@@ -950,10 +950,10 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:py-bottom-[0px] max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0]'>
+                    <div className='px-[300px] py-[60px] max-426:pt-[20px] max-600:py-bottom-[0px] max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0]'>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>Check out these real reviews</span>
-                            <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Users-love-us Don't take it from us</h1>
+                            <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[25px] max-600:text-[20px]'>Users-love-us Don't take it from us</h1>
                             <p className='pb-[50px] text-[#5C5C5C] px-[298px] text-[16px] leading-[150%] max-1041:px-[75px] max-460:px-[12px] max-769:px-[0] max-600:text-[16px] max-426:px-0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget aenean accumsan bibendum
                                 gravida maecenas augue elementum et neque. Suspendisse imperdiet.</p>
                         </div>
@@ -975,12 +975,12 @@ const DreamPage = () => {
                             </div>
                         </div>
                         <div className='pt-[70px] grid grid-cols-6 max-900:hidden'>
-                            <img className='mx-auto' src={lead1} alt="" />
-                            <img className='mx-auto' src={lead2} alt="" />
-                            <img className='mx-auto' src={lead3} alt="" />
-                            <img className='mx-auto' src={lead4} alt="" />
-                            <img className='mx-auto' src={lead5} alt="" />
-                            <img className='mx-auto' src={lead6} alt="" />
+                            <img className='mx-auto my-auto' src={lead1} alt="" />
+                            <img className='mx-auto my-auto' src={lead2} alt="" />
+                            <img className='mx-auto my-auto' src={lead3} alt="" />
+                            <img className='mx-auto my-auto' src={lead4} alt="" />
+                            <img className='mx-auto my-auto' src={lead5} alt="" />
+                            <img className='mx-auto my-auto' src={lead6} alt="" />
                         </div>
 
                         <div className='pt-[70px] grid grid-cols-3 grid-rows-2 max-700:hidden 900:hidden'>
@@ -999,10 +999,10 @@ const DreamPage = () => {
 
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[0] max-600:px-[0]'>
+                    <div className='px-[300px] py-[60px] max-426:pt-[20px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[0] max-600:px-[0]'>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>News & Events</span>
-                            <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[50px] max-600:text-[20px]'>Our Latest Updates</h1>
+                            <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[25px] max-600:text-[20px]'>Our Latest Updates</h1>
                             <p className='pb-[50px] text-[#5C5C5C] px-[298px] text-[16px] leading-[150%] max-1041:px-[75px] max-769:px-[12px] max-426:px-0 max-600:text-[16px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget aenean accumsan bibendum
                                 gravida maecenas augue elementum et neque. Suspendisse imperdiet.</p>
                         </div>
@@ -1058,15 +1058,15 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px]  max-1025:px-[60px] max-600:px-[0]'>
-                        <div className=' grid grid-cols-6 max-768:grid-cols-2 max-768:grid-rows-2 max-460:grid-cols-1 max-460:text-center'>
-                            <div className='p-[12px] col-span-2 max-768:grid-cols-1 max-768:grid-rows-1 max-768:col-span-1  '>
+                    <div className='px-[300px] py-[60px] max-426:pt-[20px] max-600:pb-[60px]  max-1618:px-[72px]  max-1025:px-[60px] max-600:px-[0]'>
+                        <div className=' grid grid-cols-6 max-768:grid-cols-2 max-768:grid-rows-2 max-460:grid-cols-1 '>
+                            <div className='p-[12px] col-span-2 max-768:grid-cols-1 max-768:grid-rows-1 max-768:col-span-1   '>
                                 <img className='w-[50%] max-460:mx-auto max-1441:ml-[10px] max-1025:ml-[25px] max-769:ml-[30px]' src={logo} alt="" />
-                                <p className='ml-[5px] pl-[40px] w-[75%] max-460:pl-0 max-460:text-center max-460:w-[100%]'>Lorem ipsum dolor sit amet, consectetur
+                                <p className='ml-[5px] pl-[40px] w-[75%] max-460:pl-0  max-460:w-[100%]'>Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Ut consequat mauris Lorem
                                     ipsum dolor sit amet, consectetur adipiscing
                                     elit. Ut consequat mauris</p>
-                                <div className='ml-[5px] flex pl-[40px] pt-[20px] max-460:justify-center max-460:pl-0'>
+                                <div className='ml-[5px] flex pl-[40px] pt-[20px]  max-460:pl-0'>
                                     <img className=' pr-[15px]' src={round} alt="" />
                                     <img className=' pr-[15px]' src={round} alt="" />
                                     <img className=' pr-[15px]' src={round} alt="" />
@@ -1075,7 +1075,7 @@ const DreamPage = () => {
                             </div>
                             <div className='p-[12px] grid-cols-1 max-768:grid-cols-1 max-768:grid-rows-1 '>
                                 <h1 className='text-[#392C7D] leading-[120%] font-bold text-[18px] pb-[26px]'>For Instructor</h1>
-                                <div className='pl-5 max-426:pl-0 max-426:mx-auto '>
+                                <div className='pl-5 max-426:pl-0  '>
                                     <p className='text-[#000] leading-[150%] font-medium text-[15px] pb-[19px]'>Profile</p>
                                     <p className='text-[#000] leading-[150%] font-medium text-[15px] pb-[19px]'>Login</p>
                                     <p className='text-[#000] leading-[150%] font-medium text-[15px] pb-[19px]'>Register</p>
@@ -1085,7 +1085,7 @@ const DreamPage = () => {
                             </div>
                             <div className='p-[12px] grid-cols-1 max-768:grid-cols-1 max-768:grid-rows-1 '>
                                 <h1 className='text-[#392C7D] leading-[120%] font-bold text-[18px] pb-[26px]'>For Student</h1>
-                                <div className='pl-5 max-426:pl-0 max-426:mx-auto'>
+                                <div className='pl-5 max-426:pl-0'>
                                     <p className='text-[#000] leading-[150%] font-medium text-[15px] pb-[19px]'>Profile</p>
                                     <p className='text-[#000] leading-[150%] font-medium text-[15px] pb-[19px]'>Login</p>
                                     <p className='text-[#000] leading-[150%] font-medium text-[15px] pb-[19px]'>Register</p>
@@ -1095,7 +1095,7 @@ const DreamPage = () => {
                             </div>
                             <div className='p-[12px] col-span-2 max-768:grid-cols-1 max-768:grid-rows-1 max-768:col-span-1'>
                                 <h1 className='text-[#392C7D] leading-[120%] font-bold text-[18px] pb-[26px]'>Address</h1>
-                                <div className='max-w-[232px] max-426:mx-auto'>
+                                <div className='max-w-[232px] '>
                                     <div className='pb-[15px]'>
                                         <p className='text-[#392C7D] leading-[120%] font-medium text-[16px] pb-[9px]'>Location</p>
                                         <p className='text-[#4F4F4F] leading-[150%] font-medium text-[14px]'>3556 Beech Street, San Francisco, California, CA 94108</p>
@@ -1121,7 +1121,7 @@ const DreamPage = () => {
                                 <a className='px-[10px]' href="">Contact Us</a>
                             </div>
                         </div>
-                        <div className='text-center p-[60px] max-768:p-[12px] max-460:flex-wrap 700:hidden '>
+                        <div className='text-center p-[60px] max-460:pt-[70px] max-768:p-[12px] max-460:flex-wrap 700:hidden '>
                             <div className='my-auto'>
                                 <p className='max-460:text-center'>© 2023 DreamsLMS. All rights reserved.</p>
                             </div>
