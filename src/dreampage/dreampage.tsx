@@ -73,7 +73,7 @@ const DreamPage = () => {
                     {['Home ', 'Instructor', 'Student', 'Page', 'Blog', 'Login / Signup'].map((text, index) => (
                         <ListItem className='text-[#fff] bg-[#F66962] ' key={text} disablePadding>
                             <ListItemButton>
-                                <ListItemText primary={text} />
+                                <ListItemText className='text-[15px] font-medium leading-[70px]' primary={text} />
                                 <ListItemIcon>
                                     <img src={down} alt="" />
                                 </ListItemIcon>
@@ -145,7 +145,7 @@ const DreamPage = () => {
                 </div>
                 <div className='z-10 absolute  max-600:px-[12px]' >
                     <div className=''>
-                        <div className=' max-600:px-[0]  h-[70px] pt-[20px] mx-[300px] max-1618:mx-[72px] max-769:mx-[12px] max-426:mx-0 flex items-center justify-between '>
+                        <div className=' max-600:px-[0]  h-[70px] pt-[20px] mx-[300px] max-1618:mx-[47px]  max-769:mx-[12px] max-426:mx-0 flex items-center justify-between '>
                             <div className='flex  max-600:w-[100%]'>
                                 <button>
                                     <div className=' absolute 900:hidden text-white py-0'>
@@ -164,12 +164,12 @@ const DreamPage = () => {
                                     </div>
                                     <img className=' pr-[30px] 900:hidden ' src={link} alt="menu" />
                                 </button>
-                                <img className='mx-auto relative h-[100px] max-600:h-[80px]' src={logo} alt="logo" />
+                                <img className='mx-auto  relative h-[100px] max-600:h-[80px]' src={logo} alt="logo" />
                             </div>
-                            <div className=' text-textColor text-[15px] flex flex-wrap gap-[20px] max-1040:text-[13px] max-900:hidden'>
+                            <div className=' text-textColor text-[15px] flex justify-between gap-[20px] max-1040:text-[13px] max-900:hidden'>
                                 <div className=' '>
                                     <ThemeProvider theme={theme}>
-                                        <Button
+                                        <Button className='p-0 my-auto'
                                             id="menubutton1"
                                             aria-owns={open ? "simple-menu1" : undefined}
                                             aria-haspopup="true"
@@ -178,7 +178,7 @@ const DreamPage = () => {
                                             style={{ zIndex: 1301 }}
                                         >
                                             <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Home</span>
-                                            <div className="my-auto mx-auto border-textColor h-[10px] w-[10px] border-b-2 border-r-2 transform rotate-45 "></div>
+                                            <div className="my-auto mx-auto border-textColor h-[8px] w-[8px] border-b-2 border-r-2 transform rotate-45 "></div>
                                         </Button>
                                         <Menu className='p-[20px]'
                                             id="simple-menu1"
@@ -201,7 +201,7 @@ const DreamPage = () => {
                                 </div>
                                 <div className=' '>
                                     <ThemeProvider theme={theme}>
-                                        <Button
+                                        <Button className='p-0 my-auto'
                                             id="menubutton2"
                                             aria-owns={open ? "simple-menu2" : undefined}
                                             aria-haspopup="true"
@@ -233,7 +233,7 @@ const DreamPage = () => {
                                 </div>
                                 <div className=' '>
                                     <ThemeProvider theme={theme}>
-                                        <Button
+                                        <Button className='p-0 my-auto'
                                             id="menubutton3"
                                             aria-owns={open ? "simple-menu3" : undefined}
                                             aria-haspopup="true"
@@ -265,7 +265,7 @@ const DreamPage = () => {
                                 </div>
                                 <div className=' '>
                                     <ThemeProvider theme={theme}>
-                                        <Button
+                                        <Button className='p-0 my-auto'
                                             id="menubutton4"
                                             aria-owns={open ? "simple-menu4" : undefined}
                                             aria-haspopup="true"
@@ -297,7 +297,7 @@ const DreamPage = () => {
                                 </div>
                                 <div className=' '>
                                     <ThemeProvider theme={theme}>
-                                        <Button
+                                        <Button className='p-0 my-auto'
                                             id="menubutton5"
                                             aria-owns={open ? "simple-menu5" : undefined}
                                             aria-haspopup="true"
@@ -673,7 +673,7 @@ const DreamPage = () => {
                             <div className='grid grid-cols-2 pt-[50px] max-426:pt-[20px] max-900:grid-cols-1 '>
                                 <div className='my-auto text-right pr-[90px] max-1025:pr-[60px] max-900:pr-0 max-900:text-center'>
                                     <h1 className='text-[#5C5C5C] text-[36px] font-bold leading-[120%] max-1025:text-[24px] max-600:text-[20px] pb-[25px]'>Award Winning Course Management</h1>
-                                    <p className='text-[16px] max-1025:text-[14px] max-600:px-0 max-769:p-[12px] max-426:p-0 max-600:text-[14px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam dolor
+                                    <p className='text-[16px] max-1025:text-[14px] max-600:px-0 max-769:p-[12px] max-426:p-0 max-600:text-[14px]  max-426:pb-[25px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam dolor
                                         fermentum massa viverra congue proin. A volutpat eget ultrices
                                         velit nunc orci. Commodo quis integer a felis ac vel mauris a morbi.
                                         Scelerisque nunc accumsan elementum aenean nisl lacinia. Congue
@@ -694,7 +694,7 @@ const DreamPage = () => {
                                 <div className='my-auto text-left px-[55px] max-769:px-0 max-900:order-1 max-900:text-center max-426:p-0 '>
                                     <h1 className='text-[#5C5C5C] text-[36px] font-bold leading-[120%] max-1025:text-[24px] max-600:text-[20px] pb-[25px]'>Award Winning Course
                                         Management</h1>
-                                    <p className='text-[16px] max-1025:text-[14px] max-600:text-[14px] max-769:p-[12px] max-426:p-0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam
+                                    <p className='text-[16px] max-1025:text-[14px] max-600:text-[14px] max-769:p-[12px] max-426:p-0 max-426:pb-[25px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam
                                         dolor fermentum massa viverra congue proin. A volutpat eget
                                         ultrices velit nunc orci. Commodo quis integer a felis ac vel
                                         mauris a morbi. Scelerisque nunc accumsan elementum aenean
@@ -707,7 +707,7 @@ const DreamPage = () => {
                                 <div className='my-auto text-right pr-[90px] max-1025:pr-[60px] max-900:pr-0 '>
                                     <h1 className='text-[#5C5C5C] text-[36px] max-1025:text-[24px] max-900:text-center font-bold leading-[120%] max-600:text-[20px] pb-[25px]'>Certification for solid
                                         development of your Carrer</h1>
-                                    <p className='text-[16px] max-1025:text-[14px] text-center max-600:text-[14px] max-769:p-[12px] max-426:p-0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam dolor
+                                    <p className='text-[16px] max-1025:text-[14px] text-center max-600:text-[14px] max-769:p-[12px] max-426:p-0 max-426:pb-[25px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam dolor
                                         fermentum massa viverra congue proin. A volutpat eget ultrices
                                         velit nunc orci. Commodo quis integer a felis ac vel mauris a morbi.
                                         Scelerisque nunc accumsan elementum aenean nisl lacinia. Congue
@@ -767,7 +767,7 @@ const DreamPage = () => {
                                     </div>
                                     <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] mt-[15px] mb-[10px] max-1025:h-[96px] max-769:h-auto max-426:text-[18px]'>Wordpress for Beginners - Master Wordpress Quickly</h1>
                                     <div className=' max-460:hidden w-[100%] flex text-[14px] text-[#22100D] font-medium leading-[150%]'>
-                                        <img className='pr-[8px] w-[30px] h-[30px]' src={time2} alt="" />
+                                        <img className='pr-[8px] w-[30px] h-[25px]' src={time2} alt="" />
                                         <p className='my-auto '>6hr 30min</p>
                                     </div>
                                     <div className='flex justify-between pt-[36px] max-1025:pt-[10px]'>
@@ -789,7 +789,7 @@ const DreamPage = () => {
                                     </div>
                                     <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] mt-[15px] mb-[10px] max-1025:h-[96px] max-769:h-auto max-426:text-[18px]'>C# Developers Double Your Coding Speed with Visual Studio</h1>
                                     <div className=' max-460:hidden w-[100%] flex text-[14px] text-[#22100D] font-medium leading-[150%]'>
-                                        <img className='pr-[8px] w-[30px] h-[30px]' src={time2} alt="" />
+                                        <img className='pr-[8px] w-[30px] h-[25px]' src={time2} alt="" />
                                         <span className='my-auto'>6hr 30min</span>
                                     </div>
                                     <div className='flex justify-between pt-[36px] max-1025:pt-[10px]'>
@@ -811,7 +811,7 @@ const DreamPage = () => {
                                     </div>
                                     <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] mt-[15px] mb-[10px] max-1025:h-[96px] max-769:h-auto max-426:text-[18px]'>Learn Angular Fundamentals From beginning to advance lavel</h1>
                                     <div className='max-460:hidden w-[100%] flex text-[14px] text-[#22100D] font-medium leading-[150%]'>
-                                        <img className='pr-[8px] w-[30px] h-[30px]' src={time2} alt="" />
+                                        <img className='pr-[8px] w-[30px] h-[25px]' src={time2} alt="" />
                                         <span className='my-auto'>6hr 30min</span>
                                     </div>
                                     <div className='flex justify-between pt-[36px] max-1025:pt-[10px]'>
@@ -833,7 +833,7 @@ const DreamPage = () => {
                                     </div>
                                     <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] mt-[15px] mb-[10px] max-1025:h-[96px] max-769:h-auto max-426:text-[18px]'>Build Responsive Real World Websites with HTML5 and CSS3</h1>
                                     <div className='max-460:hidden w-[100%] flex text-[14px] text-[#22100D] font-medium leading-[150%]'>
-                                        <img className='pr-[8px] w-[30px] h-[30px]' src={time2} alt="" />
+                                        <img className='pr-[8px] w-[30px] h-[25px]' src={time2} alt="" />
                                         <span className='my-auto'>6hr 30min</span>
                                     </div>
                                     <div className='flex justify-between pt-[36px] max-1025:pt-[10px]'>
@@ -848,9 +848,9 @@ const DreamPage = () => {
                             <img className='pl-[9px]' src={right} alt="" />
                         </button>
                     </div>
-                    <div className='px-[300px] py-[60px] max-426:pt-[20px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0] grid grid-cols-2 max-1040:grid-cols-1 gap-[24px]'>
-                        <img className='h-[100%] max-1040:mx-auto rounded-[10px]' src={feature} alt="" />
-                        <div className='p-[20px] max-600:p-0 max-w-[783px]'>
+                    <div className=' p-[12px] py-[60px] max-426:pt-[20px] max-600:pb-[60px]   max-600:px-[0] grid grid-cols-2 max-1040:grid-cols-1 gap-[24px]'>
+                        <img className='h-[777px] max-600:h-[500px]  w-full object-left object-cover max-1040:mx-auto rounded-[10px]' src={feature} alt="" />
+                        <div className='p-[30px] max-600:p-0 '>
                             <h1 className='text-[#5C5C5C] text-[32px] font-bold leading-[120%] max-600:text-[20px]'>Want to share your knowledge?</h1>
                             <h1 className='text-[#5C5C5C] text-[32px] font-bold leading-[120%] max-600:text-[20px]'>Join us a Mentor</h1>
                             <p className='pt-[25px] text-[#292929] text-[16px] font-normal leading-[150%] max-769:text-[14px]'>High-definition video is video of higher resolution and quality than standard-definition. While there is no standardized meaning for high-definition, generally any video.</p>
