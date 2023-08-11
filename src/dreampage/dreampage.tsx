@@ -746,7 +746,7 @@ const DreamPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0] max-426:pt-0 bg-[#F5F5F5]'>
+                    <div className='px-[300px] py-[60px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-971:px-[30px] max-769:px-[12px] max-600:px-[0] max-426:pt-0 bg-[#F5F5F5]'>
                         <div className='text-center'>
                             <span className='leading-[150%] text-green1920 font-semibold text-[20px] max-1041:text-orange1040'>New Courses</span>
                             <h1 className='leading-[120%]  text-[#4F4F4F] font-bold text-[32px] pt-[15px] pb-[25px] max-600:text-[20px]'>Trending Courses</h1>
@@ -765,7 +765,7 @@ const DreamPage = () => {
                                         <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                         <p className='max-1025:text-[13px] max-391:text-[10px] '>243 reviews</p>
                                     </div>
-                                    <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] mt-[15px] mb-[10px] max-1025:h-[96px] max-769:h-auto max-426:text-[18px]'>Wordpress for Beginners - Master Wordpress Quickly</h1>
+                                    <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] mt-[15px] mb-[10px] max-1025:h-[96px] max-769:h-auto max-1025:text-[18px]'>Wordpress for Beginners - Master Wordpress Quickly</h1>
                                     <div className=' max-460:hidden w-[100%] flex text-[14px] text-[#22100D] font-medium leading-[150%]'>
                                         <img className='pr-[8px] w-[30px] h-[25px]' src={time2} alt="" />
                                         <p className='my-auto '>6hr 30min</p>
@@ -787,7 +787,7 @@ const DreamPage = () => {
                                         <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                         <p className='max-1025:text-[13px] max-391:text-[10px]'>243 reviews</p>
                                     </div>
-                                    <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] mt-[15px] mb-[10px] max-1025:h-[96px] max-769:h-auto max-426:text-[18px]'>C# Developers Double Your Coding Speed with Visual Studio</h1>
+                                    <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] mt-[15px] mb-[10px] max-1025:h-[96px] max-769:h-auto max-1025:text-[18px]'>C# Developers Double Your Coding Speed with Visual Studio</h1>
                                     <div className=' max-460:hidden w-[100%] flex text-[14px] text-[#22100D] font-medium leading-[150%]'>
                                         <img className='pr-[8px] w-[30px] h-[25px]' src={time2} alt="" />
                                         <span className='my-auto'>6hr 30min</span>
@@ -809,7 +809,7 @@ const DreamPage = () => {
                                         <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                         <p className='max-1025:text-[13px] max-391:text-[10px]'>243 reviews</p>
                                     </div>
-                                    <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] mt-[15px] mb-[10px] max-1025:h-[96px] max-769:h-auto max-426:text-[18px]'>Learn Angular Fundamentals From beginning to advance lavel</h1>
+                                    <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] mt-[15px] mb-[10px] max-1025:h-[96px] max-769:h-auto max-1025:text-[18px]'>Learn Angular Fundamentals From beginning to advance lavel</h1>
                                     <div className='max-460:hidden w-[100%] flex text-[14px] text-[#22100D] font-medium leading-[150%]'>
                                         <img className='pr-[8px] w-[30px] h-[25px]' src={time2} alt="" />
                                         <span className='my-auto'>6hr 30min</span>
@@ -831,7 +831,7 @@ const DreamPage = () => {
                                         <img className='pl-[5px] pr-[12px]' src={staryealow} alt="" />
                                         <p className='max-1025:text-[13px] max-391:text-[10px]'>243 reviews</p>
                                     </div>
-                                    <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] mt-[15px] mb-[10px] max-1025:h-[96px] max-769:h-auto max-426:text-[18px]'>Build Responsive Real World Websites with HTML5 and CSS3</h1>
+                                    <h1 className='text-[#324FA2] text-[20px] font-bold leading-[120%] mt-[15px] mb-[10px] max-1025:h-[96px] max-769:h-auto max-1025:text-[18px]'>Build Responsive Real World Websites with HTML5 and CSS3</h1>
                                     <div className='max-460:hidden w-[100%] flex text-[14px] text-[#22100D] font-medium leading-[150%]'>
                                         <img className='pr-[8px] w-[30px] h-[25px]' src={time2} alt="" />
                                         <span className='my-auto'>6hr 30min</span>
