@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import {
     List, ListItem, ListItemButton, ListItemText,
-    SwipeableDrawer, ListItemIcon, Button, Box,
-    Menu, MenuItem, FormControl, InputLabel, Select, SelectChangeEvent
+    SwipeableDrawer, ListItemIcon, Box
 } from '@mui/material';
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
-// import Button from "@material-ui/core/Button";
+import Button from "@material-ui/core/Button";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 import {
     logo,
     background, background1, background2,
@@ -63,68 +64,112 @@ const DreamPage = () => {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                <div className='grid grid-cols-2 bg-white '>
-                    <img className='' src={logo} alt="" />
-                    <button>
-                        <img className='w-[16px] h-[18px] my-auto ml-[80px] ' src={close} alt="" />
-                    </button>
-                </div>
-                <div className='pb-[993px] bg-[#F66962] pl-[20px]'>
-                    {['Home ', 'Instructor', 'Student', 'Page', 'Blog', 'Login / Signup'].map((text, index) => (
-                        <ListItem className='text-[#fff] bg-[#F66962] ' key={text} disablePadding>
-                            <ListItemButton>
-                                <ListItemText className='text-[15px] font-medium leading-[70px]' primary={text} />
-                                <ListItemIcon>
-                                    <img src={down} alt="" />
-                                </ListItemIcon>
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
+                <div className=' 900:hidden'>
+                    <div className='grid grid-cols-2 bg-white '>
+                        <img className='' src={logo} alt="" />
+                        <button>
+                            <img className='w-[16px] h-[18px] my-auto ml-[60px] ' src={close} alt="" />
+                        </button>
+                    </div>
+                    <div className='pb-[993px] bg-[#F66962] pl-[20px]'>
+                        {['Home ', 'Instructor', 'Student', 'Page', 'Blog', 'Login / Signup'].map((text, index) => (
+                            <ListItem className='text-[#fff] bg-[#F66962] ' key={text} disablePadding>
+                                <ListItemButton>
+                                    <ListItemText className='text-[15px] font-medium leading-[70px]' primary={text} />
+                                    <ListItemIcon>
+                                        <img src={down} alt="" />
+                                    </ListItemIcon>
+                                </ListItemButton>
+                            </ListItem>
+                        ))}
+                    </div>
                 </div>
             </List>
         </Box>
     );
 
     const theme = createTheme({});
-    const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-    const [open, setOpen] = useState(false);
+   const [menu1AnchorEl, setMenu1AnchorEl] = React.useState(null);
+  const [menu2AnchorEl, setMenu2AnchorEl] = React.useState(null);
+  const [menu3AnchorEl, setMenu3AnchorEl] = React.useState(null);
+  const [menu4AnchorEl, setMenu4AnchorEl] = React.useState(null);
+  const [menu5AnchorEl, setMenu5AnchorEl] = React.useState(null);
 
-    const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
-        setOpen(true);
-    };
+  let currentlyHovering = false;
 
-    const handleClose = (e: React.MouseEvent<HTMLElement>) => {
-        if (e.currentTarget.localName !== "ul") {
-            const menu = document.getElementById("simple-menu")
-                ?.children[2] as HTMLElement | null;
-            if (!menu) return;
 
-            const menuBoundary = {
-                left: menu.offsetLeft,
-                top: menu.offsetTop + menu.offsetHeight,
-                right: menu.offsetLeft + menu.offsetWidth,
-                bottom: menu.offsetTop + menu.offsetHeight
-            };
-            if (
-                e.clientX < menuBoundary.left ||
-                e.clientX > menuBoundary.right ||
-                e.clientY < menuBoundary.top ||
-                e.clientY > menuBoundary.bottom
-            ) {
-                setOpen(false);
-            }
-        }
-        setOpen(false);
-    };
+    function handleClickMenu1(event:any) {
+        setMenu1AnchorEl(event.currentTarget);
+      }
+      function handleClickMenu2(event:any) {
+        setMenu2AnchorEl(event.currentTarget);
+      }
+      function handleClickMenu3(event:any) {
+        setMenu3AnchorEl(event.currentTarget);
+      }
+      function handleClickMenu4(event:any) {
+        setMenu4AnchorEl(event.currentTarget);
+      }
+      function handleClickMenu5(event:any) {
+        setMenu5AnchorEl(event.currentTarget);
+      }
 
-    theme.props = {
-        MuiList: {
-            onMouseLeave: (e: React.MouseEvent<HTMLElement>) => {
-                handleClose(e);
-            }
-        }
-    };
+      function handleCloseMenu1() {
+        setMenu1AnchorEl(null);
+      }
+      function handleCloseMenu2() {
+        setMenu2AnchorEl(null);
+      }
+      function handleCloseMenu3() {
+        setMenu3AnchorEl(null);
+      }
+      function handleCloseMenu4() {
+        setMenu4AnchorEl(null);
+      }
+      function handleCloseMenu5() {
+        setMenu5AnchorEl(null);
+      }
+
+      function handleCloseHoverMenu1() {
+        currentlyHovering = false;
+        setTimeout(() => {
+          if (!currentlyHovering) {
+            handleCloseMenu1();
+          }
+        }, 50);
+      }
+      function handleCloseHoverMenu2() {
+        currentlyHovering = false;
+        setTimeout(() => {
+          if (!currentlyHovering) {
+            handleCloseMenu2();
+          }
+        }, 50);
+      }
+      function handleCloseHoverMenu3() {
+        currentlyHovering = false;
+        setTimeout(() => {
+          if (!currentlyHovering) {
+            handleCloseMenu3();
+          }
+        }, 50);
+      }
+      function handleCloseHoverMenu4() {
+        currentlyHovering = false;
+        setTimeout(() => {
+          if (!currentlyHovering) {
+            handleCloseMenu4();
+          }
+        }, 50);
+      }
+      function handleCloseHoverMenu5() {
+        currentlyHovering = false;
+        setTimeout(() => {
+          if (!currentlyHovering) {
+            handleCloseMenu5();
+          }
+        }, 50);
+      }
 
     const [age, setAge] = React.useState('');
 
@@ -171,10 +216,10 @@ const DreamPage = () => {
                                     <ThemeProvider theme={theme}>
                                         <Button className='p-0 my-auto'
                                             id="menubutton1"
-                                            aria-owns={open ? "simple-menu1" : undefined}
+                                            aria-owns={menu1AnchorEl ? "simple-menu1" : undefined}
                                             aria-haspopup="true"
-                                            onMouseEnter={handleOpen}
-                                            onMouseLeave={handleClose}
+                                            onMouseEnter={handleClickMenu1}
+                                            // onMouseLeave={handleCloseMenu1}
                                             style={{ zIndex: 1301 }}
                                         >
                                             <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Home</span>
@@ -182,8 +227,8 @@ const DreamPage = () => {
                                         </Button>
                                         <Menu className='p-[20px]'
                                             id="simple-menu1"
-                                            anchorEl={anchorEl}
-                                            open={open}
+                                            anchorEl={menu1AnchorEl}
+                                            open={Boolean(menu1AnchorEl)}
                                             anchorOrigin={{
                                                 vertical: "bottom",
                                                 horizontal: "center"
@@ -193,9 +238,9 @@ const DreamPage = () => {
                                                 horizontal: "center"
                                             }}
                                         >
-                                            hai
-                                            <br />
-                                            hai
+                                            <MenuItem onClick={handleCloseMenu1}>Home1</MenuItem>
+                                            <MenuItem onClick={handleCloseMenu1}>Home2</MenuItem>
+                                            <MenuItem onClick={handleCloseMenu1}>Home3</MenuItem>
                                         </Menu>
                                     </ThemeProvider>
                                 </div>
@@ -203,10 +248,10 @@ const DreamPage = () => {
                                     <ThemeProvider theme={theme}>
                                         <Button className='p-0 my-auto'
                                             id="menubutton2"
-                                            aria-owns={open ? "simple-menu2" : undefined}
+                                            aria-owns={menu2AnchorEl ? "simple-menu2" : undefined}
                                             aria-haspopup="true"
-                                            onMouseOver={handleOpen}
-                                            onMouseLeave={handleClose}
+                                            onMouseOver={handleClickMenu2}
+                                            onMouseLeave={handleCloseMenu2}
                                             style={{ zIndex: 1301 }}
                                         >
                                             <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Intructor</span>
@@ -214,8 +259,8 @@ const DreamPage = () => {
                                         </Button>
                                         <Menu
                                             id="simple-menu2"
-                                            anchorEl={anchorEl}
-                                            open={open}
+                                            anchorEl={menu2AnchorEl}
+                                            open={Boolean(menu2AnchorEl)}
                                             anchorOrigin={{
                                                 vertical: "bottom",
                                                 horizontal: "center"
@@ -225,9 +270,9 @@ const DreamPage = () => {
                                                 horizontal: "center"
                                             }}
                                         >
-                                            mot
-                                            <br />
-                                            hai
+                                            <MenuItem onClick={handleCloseMenu2}>Intructor1</MenuItem>
+                                            <MenuItem onClick={handleCloseMenu2}>Intructor2</MenuItem>
+                                            <MenuItem onClick={handleCloseMenu2}>Intructor3</MenuItem>
                                         </Menu>
                                     </ThemeProvider>
                                 </div>
@@ -235,10 +280,10 @@ const DreamPage = () => {
                                     <ThemeProvider theme={theme}>
                                         <Button className='p-0 my-auto'
                                             id="menubutton3"
-                                            aria-owns={open ? "simple-menu3" : undefined}
+                                            aria-owns={menu3AnchorEl ? "simple-menu3" : undefined}
                                             aria-haspopup="true"
-                                            onMouseOver={handleOpen}
-                                            onMouseLeave={handleClose}
+                                            onMouseOver={handleClickMenu3}
+                                            onMouseLeave={handleCloseMenu3}
                                             style={{ zIndex: 1301 }}
                                         >
                                             <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Student</span>
@@ -246,8 +291,8 @@ const DreamPage = () => {
                                         </Button>
                                         <Menu
                                             id="simple-menu3"
-                                            anchorEl={anchorEl}
-                                            open={open}
+                                            anchorEl={menu3AnchorEl}
+                                            open={Boolean(menu3AnchorEl)}
                                             anchorOrigin={{
                                                 vertical: "bottom",
                                                 horizontal: "center"
@@ -257,9 +302,9 @@ const DreamPage = () => {
                                                 horizontal: "center"
                                             }}
                                         >
-                                            mot
-                                            <br />
-                                            hai
+                                            <MenuItem onClick={handleCloseMenu3}>Student1</MenuItem>
+                                            <MenuItem onClick={handleCloseMenu3}>Student2</MenuItem>
+                                            <MenuItem onClick={handleCloseMenu3}>Student3</MenuItem>
                                         </Menu>
                                     </ThemeProvider>
                                 </div>
@@ -267,19 +312,19 @@ const DreamPage = () => {
                                     <ThemeProvider theme={theme}>
                                         <Button className='p-0 my-auto'
                                             id="menubutton4"
-                                            aria-owns={open ? "simple-menu4" : undefined}
+                                            aria-owns={menu4AnchorEl ? "simple-menu4" : undefined}
                                             aria-haspopup="true"
-                                            onMouseOver={handleOpen}
-                                            onMouseLeave={handleClose}
+                                            onMouseOver={handleClickMenu4}
+                                            onMouseLeave={handleCloseMenu4}
                                             style={{ zIndex: 1301 }}
                                         >
                                             <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Pages</span>
                                             <div className="my-auto mx-auto border-textColor h-[10px] w-[10px] border-b-2 border-r-2 transform rotate-45 "></div>
                                         </Button>
                                         <Menu
-                                            id="simple-menu4"
-                                            anchorEl={anchorEl}
-                                            open={open}
+                                            // id="simple-menu4"
+                                            anchorEl={menu4AnchorEl}
+                                            open={Boolean(menu4AnchorEl)}
                                             anchorOrigin={{
                                                 vertical: "bottom",
                                                 horizontal: "center"
@@ -289,9 +334,9 @@ const DreamPage = () => {
                                                 horizontal: "center"
                                             }}
                                         >
-                                            mot
-                                            <br />
-                                            hai
+                                            <MenuItem onClick={handleCloseMenu4}>Pages1</MenuItem>
+                                            <MenuItem onClick={handleCloseMenu4}>Pages2</MenuItem>
+                                            <MenuItem onClick={handleCloseMenu4}>Pages3</MenuItem>
                                         </Menu>
                                     </ThemeProvider>
                                 </div>
@@ -299,10 +344,10 @@ const DreamPage = () => {
                                     <ThemeProvider theme={theme}>
                                         <Button className='p-0 my-auto'
                                             id="menubutton5"
-                                            aria-owns={open ? "simple-menu5" : undefined}
+                                            aria-owns={menu5AnchorEl ? "simple-menu5" : undefined}
                                             aria-haspopup="true"
-                                            onMouseOver={handleOpen}
-                                            onMouseLeave={handleClose}
+                                            onMouseOver={handleClickMenu5}
+                                            onMouseLeave={handleCloseMenu5}
                                             style={{ zIndex: 1301 }}
                                         >
                                             <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Blog</span>
@@ -310,8 +355,8 @@ const DreamPage = () => {
                                         </Button>
                                         <Menu
                                             id="simple-menu5"
-                                            anchorEl={anchorEl}
-                                            open={open}
+                                            anchorEl={menu5AnchorEl}
+                                            open={Boolean(menu5AnchorEl)}
                                             anchorOrigin={{
                                                 vertical: "bottom",
                                                 horizontal: "center"
@@ -321,9 +366,9 @@ const DreamPage = () => {
                                                 horizontal: "center"
                                             }}
                                         >
-                                            mot
-                                            <br />
-                                            hai
+                                            <MenuItem onClick={handleCloseMenu5}>Blog1</MenuItem>
+                                            <MenuItem onClick={handleCloseMenu5}>Blog2</MenuItem>
+                                            <MenuItem onClick={handleCloseMenu5}>Blog3</MenuItem>
                                         </Menu>
                                     </ThemeProvider>
                                 </div>
@@ -779,7 +824,7 @@ const DreamPage = () => {
                             <div className='flex max-900:flex-none max-461:grid max-461:grid-cols-1  '>
                                 <img className='max-460:mx-auto h-[217px] w-100% max-769:h-[178px] max-391:h-[120px] my-auto' src={linkcouser2} alt="" />
                                 <div className='pl-[20px] pr-[20px] max-1025:pr-0 max-1025:pl-[10px] max-w-[500px]'>
-                                <div className='h-[20px] max-426:h-[15px] max-391:h-[10px] flex text-[#A5A5A5] justify-start text-[15px] mt-[20px]'>
+                                    <div className='h-[20px] max-426:h-[15px] max-391:h-[10px] flex text-[#A5A5A5] justify-start text-[15px] mt-[20px]'>
                                         <img className='' src={staryealow} alt="" />
                                         <img className='pl-[5px]' src={staryealow} alt="" />
                                         <img className='pl-[5px]' src={staryealow} alt="" />
@@ -801,7 +846,7 @@ const DreamPage = () => {
                             <div className='flex max-900:flex-none max-461:grid max-461:grid-cols-1   '>
                                 <img className='max-460:mx-auto h-[217px] w-100% max-769:h-[178px] max-391:h-[120px] my-auto' src={linkcouser3} alt="" />
                                 <div className='pl-[20px] pr-[20px] max-1025:pr-0 max-1025:pl-[10px] max-w-[500px]'>
-                                <div className='h-[20px] max-426:h-[15px] max-391:h-[10px] flex text-[#A5A5A5] justify-start text-[15px] mt-[20px]'>
+                                    <div className='h-[20px] max-426:h-[15px] max-391:h-[10px] flex text-[#A5A5A5] justify-start text-[15px] mt-[20px]'>
                                         <img className='' src={staryealow} alt="" />
                                         <img className='pl-[5px]' src={staryealow} alt="" />
                                         <img className='pl-[5px]' src={staryealow} alt="" />
@@ -823,7 +868,7 @@ const DreamPage = () => {
                             <div className='flex max-900:flex-none max-461:grid max-461:grid-cols-1  '>
                                 <img className='max-460:mx-auto h-[217px] w-100% max-769:h-[178px] max-391:h-[120px] my-auto' src={linkcouser4} alt="" />
                                 <div className='pl-[20px] pr-[20px] max-1025:pr-0 max-1025:pl-[10px] max-w-[500px]'>
-                                <div className='h-[20px] max-426:h-[15px] max-391:h-[10px] flex text-[#A5A5A5] justify-start text-[15px] mt-[20px]'>
+                                    <div className='h-[20px] max-426:h-[15px] max-391:h-[10px] flex text-[#A5A5A5] justify-start text-[15px] mt-[20px]'>
                                         <img className='' src={staryealow} alt="" />
                                         <img className='pl-[5px]' src={staryealow} alt="" />
                                         <img className='pl-[5px]' src={staryealow} alt="" />
