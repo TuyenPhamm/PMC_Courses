@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
     List, ListItem, ListItemButton, ListItemText,
     SwipeableDrawer, ListItemIcon, Box
@@ -33,7 +33,7 @@ import {
     down,
     blog1, blog2, blog3
 } from './image.jsx'
-
+import styled from "@material-ui/styles/makeStyles";
 type Anchor = " " | 'right';
 
 const DreamPage = () => {
@@ -89,87 +89,108 @@ const DreamPage = () => {
     );
 
     const theme = createTheme({});
-   const [menu1AnchorEl, setMenu1AnchorEl] = React.useState(null);
-  const [menu2AnchorEl, setMenu2AnchorEl] = React.useState(null);
-  const [menu3AnchorEl, setMenu3AnchorEl] = React.useState(null);
-  const [menu4AnchorEl, setMenu4AnchorEl] = React.useState(null);
-  const [menu5AnchorEl, setMenu5AnchorEl] = React.useState(null);
-
-  let currentlyHovering = false;
+    const [menu1AnchorEl, setMenu1AnchorEl] = React.useState(null);
+    const [menu2AnchorEl, setMenu2AnchorEl] = React.useState(null);
+    const [menu3AnchorEl, setMenu3AnchorEl] = React.useState(null);
+    const [menu4AnchorEl, setMenu4AnchorEl] = React.useState(null);
+    const [menu5AnchorEl, setMenu5AnchorEl] = React.useState(null);
 
 
-    function handleClickMenu1(event:any) {
-        setMenu1AnchorEl(event.currentTarget);
-      }
-      function handleClickMenu2(event:any) {
-        setMenu2AnchorEl(event.currentTarget);
-      }
-      function handleClickMenu3(event:any) {
-        setMenu3AnchorEl(event.currentTarget);
-      }
-      function handleClickMenu4(event:any) {
-        setMenu4AnchorEl(event.currentTarget);
-      }
-      function handleClickMenu5(event:any) {
-        setMenu5AnchorEl(event.currentTarget);
-      }
+    // const useStyles = styled({
+    //     popOverRoot: {
+    //       pointerEvents: "none"
+    //     }
+    //   });
+    let currentlyHovering = false;
+    // const styles = useStyles();
 
-      function handleCloseMenu1() {
+    function handleClickMenu1(event: any) {
+        if (menu1AnchorEl !== event.currentTarget) {
+            setMenu1AnchorEl(event.currentTarget);
+        }
+    }
+    function handleClickMenu2(event: any) {
+        if (menu2AnchorEl !== event.currentTarget) {
+            setMenu2AnchorEl(event.currentTarget);
+        }
+    }
+    function handleClickMenu3(event: any) {
+        if (menu3AnchorEl !== event.currentTarget) {
+            setMenu3AnchorEl(event.currentTarget);
+        }
+    }
+    function handleClickMenu4(event: any) {
+        if (menu4AnchorEl !== event.currentTarget) {
+            setMenu4AnchorEl(event.currentTarget);
+        }
+    }
+    function handleClickMenu5(event: any) {
+        if (menu5AnchorEl !== event.currentTarget) {
+            setMenu5AnchorEl(event.currentTarget);
+        }
+    }
+
+    function handleHover() {
+        currentlyHovering = true;
+    }
+
+
+    function handleCloseMenu1() {
         setMenu1AnchorEl(null);
-      }
-      function handleCloseMenu2() {
+    }
+    function handleCloseMenu2() {
         setMenu2AnchorEl(null);
-      }
-      function handleCloseMenu3() {
+    }
+    function handleCloseMenu3() {
         setMenu3AnchorEl(null);
-      }
-      function handleCloseMenu4() {
+    }
+    function handleCloseMenu4() {
         setMenu4AnchorEl(null);
-      }
-      function handleCloseMenu5() {
+    }
+    function handleCloseMenu5() {
         setMenu5AnchorEl(null);
-      }
+    }
 
-      function handleCloseHoverMenu1() {
+    function handleCloseHoverMenu1() {
         currentlyHovering = false;
         setTimeout(() => {
-          if (!currentlyHovering) {
-            handleCloseMenu1();
-          }
+            if (!currentlyHovering) {
+                handleCloseMenu1();
+            }
         }, 50);
-      }
-      function handleCloseHoverMenu2() {
+    }
+    function handleCloseHoverMenu2() {
         currentlyHovering = false;
         setTimeout(() => {
-          if (!currentlyHovering) {
-            handleCloseMenu2();
-          }
+            if (!currentlyHovering) {
+                handleCloseMenu2();
+            }
         }, 50);
-      }
-      function handleCloseHoverMenu3() {
+    }
+    function handleCloseHoverMenu3() {
         currentlyHovering = false;
         setTimeout(() => {
-          if (!currentlyHovering) {
-            handleCloseMenu3();
-          }
+            if (!currentlyHovering) {
+                handleCloseMenu3();
+            }
         }, 50);
-      }
-      function handleCloseHoverMenu4() {
+    }
+    function handleCloseHoverMenu4() {
         currentlyHovering = false;
         setTimeout(() => {
-          if (!currentlyHovering) {
-            handleCloseMenu4();
-          }
+            if (!currentlyHovering) {
+                handleCloseMenu4();
+            }
         }, 50);
-      }
-      function handleCloseHoverMenu5() {
+    }
+    function handleCloseHoverMenu5() {
         currentlyHovering = false;
         setTimeout(() => {
-          if (!currentlyHovering) {
-            handleCloseMenu5();
-          }
+            if (!currentlyHovering) {
+                handleCloseMenu5();
+            }
         }, 50);
-      }
+    }
 
     const [age, setAge] = React.useState('');
 
@@ -218,9 +239,9 @@ const DreamPage = () => {
                                             id="menubutton1"
                                             aria-owns={menu1AnchorEl ? "simple-menu1" : undefined}
                                             aria-haspopup="true"
-                                            onMouseEnter={handleClickMenu1}
-                                            // onMouseLeave={handleCloseMenu1}
-                                            style={{ zIndex: 1301 }}
+                                            onClick={handleClickMenu1}
+                                            onMouseOver={handleClickMenu1}
+                                            onMouseLeave={handleCloseHoverMenu1}
                                         >
                                             <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Home</span>
                                             <div className="my-auto mx-auto border-textColor h-[8px] w-[8px] border-b-2 border-r-2 transform rotate-45 "></div>
@@ -229,14 +250,12 @@ const DreamPage = () => {
                                             id="simple-menu1"
                                             anchorEl={menu1AnchorEl}
                                             open={Boolean(menu1AnchorEl)}
-                                            anchorOrigin={{
-                                                vertical: "bottom",
-                                                horizontal: "center"
-                                            }}
-                                            transformOrigin={{
-                                                vertical: "top",
-                                                horizontal: "center"
-                                            }}
+                                            onClose={handleCloseMenu1}
+                                            MenuListProps={{
+                                                onMouseEnter: handleHover,
+                                                onMouseLeave: handleCloseMenu1,
+                                                style: { pointerEvents: "auto" }
+                                              }}
                                         >
                                             <MenuItem onClick={handleCloseMenu1}>Home1</MenuItem>
                                             <MenuItem onClick={handleCloseMenu1}>Home2</MenuItem>
@@ -246,33 +265,31 @@ const DreamPage = () => {
                                 </div>
                                 <div className=' '>
                                     <ThemeProvider theme={theme}>
-                                        <Button className='p-0 my-auto'
+                                    <Button className='p-0 my-auto'
                                             id="menubutton2"
                                             aria-owns={menu2AnchorEl ? "simple-menu2" : undefined}
                                             aria-haspopup="true"
+                                            onClick={handleClickMenu2}
                                             onMouseOver={handleClickMenu2}
-                                            onMouseLeave={handleCloseMenu2}
-                                            style={{ zIndex: 1301 }}
+                                            onMouseLeave={handleCloseHoverMenu2}
                                         >
-                                            <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Intructor</span>
-                                            <div className="my-auto mx-auto border-textColor h-[10px] w-[10px] border-b-2 border-r-2 transform rotate-45 "></div>
+                                            <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Instructor</span>
+                                            <div className="my-auto mx-auto border-textColor h-[8px] w-[8px] border-b-2 border-r-2 transform rotate-45 "></div>
                                         </Button>
-                                        <Menu
+                                        <Menu className='p-[20px]'
                                             id="simple-menu2"
                                             anchorEl={menu2AnchorEl}
                                             open={Boolean(menu2AnchorEl)}
-                                            anchorOrigin={{
-                                                vertical: "bottom",
-                                                horizontal: "center"
-                                            }}
-                                            transformOrigin={{
-                                                vertical: "top",
-                                                horizontal: "center"
-                                            }}
+                                            onClose={handleCloseMenu2}
+                                            MenuListProps={{
+                                                onMouseEnter: handleHover,
+                                                onMouseLeave: handleCloseMenu2,
+                                                style: { pointerEvents: "auto" }
+                                              }}
                                         >
-                                            <MenuItem onClick={handleCloseMenu2}>Intructor1</MenuItem>
-                                            <MenuItem onClick={handleCloseMenu2}>Intructor2</MenuItem>
-                                            <MenuItem onClick={handleCloseMenu2}>Intructor3</MenuItem>
+                                            <MenuItem onClick={handleCloseMenu2}>Instructor1</MenuItem>
+                                            <MenuItem onClick={handleCloseMenu2}>Instructor2</MenuItem>
+                                            <MenuItem onClick={handleCloseMenu2}>Instructor3</MenuItem>
                                         </Menu>
                                     </ThemeProvider>
                                 </div>
@@ -282,25 +299,24 @@ const DreamPage = () => {
                                             id="menubutton3"
                                             aria-owns={menu3AnchorEl ? "simple-menu3" : undefined}
                                             aria-haspopup="true"
+                                            onClick={handleClickMenu3}
                                             onMouseOver={handleClickMenu3}
-                                            onMouseLeave={handleCloseMenu3}
-                                            style={{ zIndex: 1301 }}
+                                            onMouseLeave={handleCloseHoverMenu3}
                                         >
                                             <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Student</span>
                                             <div className="my-auto mx-auto border-textColor h-[10px] w-[10px] border-b-2 border-r-2 transform rotate-45 "></div>
                                         </Button>
                                         <Menu
+                                            className='p-[20px]'
                                             id="simple-menu3"
                                             anchorEl={menu3AnchorEl}
                                             open={Boolean(menu3AnchorEl)}
-                                            anchorOrigin={{
-                                                vertical: "bottom",
-                                                horizontal: "center"
-                                            }}
-                                            transformOrigin={{
-                                                vertical: "top",
-                                                horizontal: "center"
-                                            }}
+                                            onClose={handleCloseMenu3}
+                                            MenuListProps={{
+                                                onMouseEnter: handleHover,
+                                                onMouseLeave: handleCloseMenu3,
+                                                style: { pointerEvents: "auto" }
+                                              }}
                                         >
                                             <MenuItem onClick={handleCloseMenu3}>Student1</MenuItem>
                                             <MenuItem onClick={handleCloseMenu3}>Student2</MenuItem>
@@ -314,25 +330,24 @@ const DreamPage = () => {
                                             id="menubutton4"
                                             aria-owns={menu4AnchorEl ? "simple-menu4" : undefined}
                                             aria-haspopup="true"
+                                            onClick={handleClickMenu4}
                                             onMouseOver={handleClickMenu4}
-                                            onMouseLeave={handleCloseMenu4}
-                                            style={{ zIndex: 1301 }}
+                                            onMouseLeave={handleCloseHoverMenu4}
                                         >
                                             <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Pages</span>
                                             <div className="my-auto mx-auto border-textColor h-[10px] w-[10px] border-b-2 border-r-2 transform rotate-45 "></div>
                                         </Button>
                                         <Menu
-                                            // id="simple-menu4"
+                                            className='p-[20px]'
+                                            id="simple-menu4"
                                             anchorEl={menu4AnchorEl}
                                             open={Boolean(menu4AnchorEl)}
-                                            anchorOrigin={{
-                                                vertical: "bottom",
-                                                horizontal: "center"
-                                            }}
-                                            transformOrigin={{
-                                                vertical: "top",
-                                                horizontal: "center"
-                                            }}
+                                            onClose={handleCloseMenu4}
+                                            MenuListProps={{
+                                                onMouseEnter: handleHover,
+                                                onMouseLeave: handleCloseMenu4,
+                                                style: { pointerEvents: "auto" }
+                                              }}
                                         >
                                             <MenuItem onClick={handleCloseMenu4}>Pages1</MenuItem>
                                             <MenuItem onClick={handleCloseMenu4}>Pages2</MenuItem>
@@ -346,25 +361,24 @@ const DreamPage = () => {
                                             id="menubutton5"
                                             aria-owns={menu5AnchorEl ? "simple-menu5" : undefined}
                                             aria-haspopup="true"
+                                            onClick={handleClickMenu5}
                                             onMouseOver={handleClickMenu5}
-                                            onMouseLeave={handleCloseMenu5}
-                                            style={{ zIndex: 1301 }}
+                                            onMouseLeave={handleCloseHoverMenu5}
                                         >
                                             <span className='text-textColor normal-case text-[15px] font-medium leading-[120%] pr-[5px]'>Blog</span>
                                             <div className="my-auto mx-auto border-textColor h-[10px] w-[10px] border-b-2 border-r-2 transform rotate-45 "></div>
                                         </Button>
                                         <Menu
+                                            className='p-[20px]'
                                             id="simple-menu5"
                                             anchorEl={menu5AnchorEl}
                                             open={Boolean(menu5AnchorEl)}
-                                            anchorOrigin={{
-                                                vertical: "bottom",
-                                                horizontal: "center"
-                                            }}
-                                            transformOrigin={{
-                                                vertical: "top",
-                                                horizontal: "center"
-                                            }}
+                                            onClose={handleCloseMenu5}
+                                            MenuListProps={{
+                                                onMouseEnter: handleHover,
+                                                onMouseLeave: handleCloseMenu5,
+                                                style: { pointerEvents: "auto" }
+                                              }}
                                         >
                                             <MenuItem onClick={handleCloseMenu5}>Blog1</MenuItem>
                                             <MenuItem onClick={handleCloseMenu5}>Blog2</MenuItem>
