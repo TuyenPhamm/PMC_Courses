@@ -9,7 +9,7 @@ import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import {
-    logo,
+    logo, logo2,
     background, background1, background2,
     link,
     stargreen, staryealow,
@@ -33,8 +33,13 @@ import {
     down,
     blog1, blog2, blog3
 } from './image.jsx'
-import styled from "@material-ui/styles/makeStyles";
+import makeStyles from "@material-ui/styles/makeStyles";
 type Anchor = " " | 'right';
+const useStyles = makeStyles({
+    popOverRoot: {
+      pointerEvents: "none"
+    }
+  });
 
 const DreamPage = () => {
     const [state, setState] = React.useState<{ [key in Anchor]: boolean }>({
@@ -64,9 +69,9 @@ const DreamPage = () => {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                <div className=' 900:hidden'>
+                <div className=' '>
                     <div className='grid grid-cols-2 bg-white '>
-                        <img className='' src={logo} alt="" />
+                        <img className='' src={logo2} alt="" />
                         <button>
                             <img className='w-[16px] h-[18px] my-auto ml-[60px] ' src={close} alt="" />
                         </button>
@@ -96,13 +101,8 @@ const DreamPage = () => {
     const [menu5AnchorEl, setMenu5AnchorEl] = React.useState(null);
 
 
-    // const useStyles = styled({
-    //     popOverRoot: {
-    //       pointerEvents: "none"
-    //     }
-    //   });
     let currentlyHovering = false;
-    // const styles = useStyles();
+    const styles = useStyles();
 
     function handleClickMenu1(event: any) {
         if (menu1AnchorEl !== event.currentTarget) {
@@ -157,7 +157,7 @@ const DreamPage = () => {
             if (!currentlyHovering) {
                 handleCloseMenu1();
             }
-        }, 50);
+        }, 0);
     }
     function handleCloseHoverMenu2() {
         currentlyHovering = false;
@@ -165,7 +165,7 @@ const DreamPage = () => {
             if (!currentlyHovering) {
                 handleCloseMenu2();
             }
-        }, 50);
+        }, 0);
     }
     function handleCloseHoverMenu3() {
         currentlyHovering = false;
@@ -173,7 +173,7 @@ const DreamPage = () => {
             if (!currentlyHovering) {
                 handleCloseMenu3();
             }
-        }, 50);
+        }, 0);
     }
     function handleCloseHoverMenu4() {
         currentlyHovering = false;
@@ -181,7 +181,7 @@ const DreamPage = () => {
             if (!currentlyHovering) {
                 handleCloseMenu4();
             }
-        }, 50);
+        }, 0);
     }
     function handleCloseHoverMenu5() {
         currentlyHovering = false;
@@ -189,7 +189,7 @@ const DreamPage = () => {
             if (!currentlyHovering) {
                 handleCloseMenu5();
             }
-        }, 50);
+        }, 0);
     }
 
     const [age, setAge] = React.useState('');
@@ -230,7 +230,7 @@ const DreamPage = () => {
                                     </div>
                                     <img className=' pr-[30px] 900:hidden ' src={link} alt="menu" />
                                 </button>
-                                <img className='mx-auto  relative h-[100px] max-600:h-[80px]' src={logo} alt="logo" />
+                                <img className='pl-[25px] max-600:pl-0 max-600:mx-auto   relative h-[100px] max-600:h-[80px]' src={logo} alt="logo" />
                             </div>
                             <div className=' text-textColor text-[15px] flex justify-between gap-[20px] max-1040:text-[13px] max-900:hidden'>
                                 <div className=' '>
@@ -255,7 +255,12 @@ const DreamPage = () => {
                                                 onMouseEnter: handleHover,
                                                 onMouseLeave: handleCloseMenu1,
                                                 style: { pointerEvents: "auto" }
-                                              }}
+                                            }}
+                                            getContentAnchorEl={null}
+                                            anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+                                            PopoverClasses={{
+                                                root: styles.popOverRoot
+                                            }}
                                         >
                                             <MenuItem onClick={handleCloseMenu1}>Home1</MenuItem>
                                             <MenuItem onClick={handleCloseMenu1}>Home2</MenuItem>
@@ -265,7 +270,7 @@ const DreamPage = () => {
                                 </div>
                                 <div className=' '>
                                     <ThemeProvider theme={theme}>
-                                    <Button className='p-0 my-auto'
+                                        <Button className='p-0 my-auto'
                                             id="menubutton2"
                                             aria-owns={menu2AnchorEl ? "simple-menu2" : undefined}
                                             aria-haspopup="true"
@@ -285,7 +290,12 @@ const DreamPage = () => {
                                                 onMouseEnter: handleHover,
                                                 onMouseLeave: handleCloseMenu2,
                                                 style: { pointerEvents: "auto" }
-                                              }}
+                                            }}
+                                            getContentAnchorEl={null}
+                                            anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+                                            PopoverClasses={{
+                                                root: styles.popOverRoot
+                                            }}
                                         >
                                             <MenuItem onClick={handleCloseMenu2}>Instructor1</MenuItem>
                                             <MenuItem onClick={handleCloseMenu2}>Instructor2</MenuItem>
@@ -316,7 +326,12 @@ const DreamPage = () => {
                                                 onMouseEnter: handleHover,
                                                 onMouseLeave: handleCloseMenu3,
                                                 style: { pointerEvents: "auto" }
-                                              }}
+                                            }}
+                                            getContentAnchorEl={null}
+                                            anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+                                            PopoverClasses={{
+                                                root: styles.popOverRoot
+                                            }}
                                         >
                                             <MenuItem onClick={handleCloseMenu3}>Student1</MenuItem>
                                             <MenuItem onClick={handleCloseMenu3}>Student2</MenuItem>
@@ -347,7 +362,12 @@ const DreamPage = () => {
                                                 onMouseEnter: handleHover,
                                                 onMouseLeave: handleCloseMenu4,
                                                 style: { pointerEvents: "auto" }
-                                              }}
+                                            }}
+                                            getContentAnchorEl={null}
+                                            anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+                                            PopoverClasses={{
+                                                root: styles.popOverRoot
+                                            }}
                                         >
                                             <MenuItem onClick={handleCloseMenu4}>Pages1</MenuItem>
                                             <MenuItem onClick={handleCloseMenu4}>Pages2</MenuItem>
@@ -378,7 +398,12 @@ const DreamPage = () => {
                                                 onMouseEnter: handleHover,
                                                 onMouseLeave: handleCloseMenu5,
                                                 style: { pointerEvents: "auto" }
-                                              }}
+                                            }}
+                                            getContentAnchorEl={null}
+                                            anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+                                            PopoverClasses={{
+                                                root: styles.popOverRoot
+                                            }}
                                         >
                                             <MenuItem onClick={handleCloseMenu5}>Blog1</MenuItem>
                                             <MenuItem onClick={handleCloseMenu5}>Blog2</MenuItem>
@@ -702,7 +727,7 @@ const DreamPage = () => {
                     </div>
                     <div className='px-[300px] py-[60px] max-426:pt-[20px] max-600:pb-[60px]  max-1618:px-[72px] max-1025:px-[60px] max-769:px-[12px] max-600:px-[0]'>
                         <div className='pt-[80px] max-426:pt-[20px] grid grid-cols-2 max-768:grid-cols-1'>
-                            <div><img className='mx-[75px] max-1040:m-0 mx-auto ' src={skil1} alt="" /></div>
+                            <div><img className='mx-[75px] max-1040:m-0 max-768:mx-auto ' src={skil1} alt="" /></div>
                             <div className='my-auto p-[12px] max-426:px-0'>
                                 <span className=' text-[20px] leading-[150%] text-green1920 font-semibold max-1041:text-orange1040'>Growup Your Skill</span>
                                 <h1 className='text-[32px] font-bold text-[#324FA2] leading-[120%]  pt-[15px] pb-[24px] max-600:text-[20px]'>Learn Anything you want today</h1>
