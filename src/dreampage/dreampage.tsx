@@ -1145,7 +1145,7 @@ const DreamPage = () => {
                     <div className='px-[300px] py-[60px] max-426:pt-[20px] max-600:pb-[60px]  max-1618:px-[72px]  max-1025:px-[60px] max-600:px-[0]'>
                         <div className=' grid grid-cols-6 max-768:grid-cols-2 max-768:grid-rows-2 max-460:grid-cols-1 '>
                             <div className='p-[12px] col-span-2 max-768:grid-cols-1 max-768:grid-rows-1 max-768:col-span-1   '>
-                                <img className='w-[50%] max-460:mx-auto max-1441:ml-[10px] max-1025:ml-[25px] max-769:ml-[30px]' src={logo} alt="" />
+                                <img className='w-[50%] ml-[45px] max-460:ml-[5px] ' src={logo} alt="" />
                                 <p className='ml-[5px] pl-[40px] w-[75%] max-460:pl-0  max-460:w-[100%]'>Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Ut consequat mauris Lorem
                                     ipsum dolor sit amet, consectetur adipiscing
