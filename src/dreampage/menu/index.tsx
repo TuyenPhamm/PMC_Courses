@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
-const theme = createMuiTheme({});
+const theme = createTheme({});
 
 const MyMenu: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);

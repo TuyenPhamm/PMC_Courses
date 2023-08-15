@@ -4,7 +4,6 @@ import {
     SwipeableDrawer, ListItemIcon, Box
 } from '@mui/material';
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -37,9 +36,9 @@ import makeStyles from "@material-ui/styles/makeStyles";
 type Anchor = " " | 'right';
 const useStyles = makeStyles({
     popOverRoot: {
-      pointerEvents: "none"
+        pointerEvents: "none"
     }
-  });
+});
 
 const DreamPage = () => {
     const [state, setState] = React.useState<{ [key in Anchor]: boolean }>({
@@ -73,7 +72,7 @@ const DreamPage = () => {
                     <div className='grid grid-cols-2 bg-white '>
                         <img className='' src={logo2} alt="" />
                         <button>
-                            <img className='w-[16px] h-[18px] my-auto ml-[60px] ' src={close} alt="" />
+                            <img className='w-[16px] h-[18px] my-auto ml-[73px] ' src={close} alt="" />
                         </button>
                     </div>
                     <div className='pb-[993px] bg-[#F66962] pl-[20px]'>
