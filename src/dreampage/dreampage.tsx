@@ -232,7 +232,7 @@ const DreamPage = () => {
                                 </button>
                                 <img className='pl-[25px] max-600:pl-0 max-600:mx-auto   relative h-[100px] max-600:h-[80px]' src={logo} alt="logo" />
                             </div>
-                            <div className=' text-textColor text-[15px] flex justify-between gap-[20px] max-1040:text-[13px] max-900:hidden'>
+                            <div className=' text-textColor text-[15px] flex justify-between gap-[20px] max-930:gap-[10px] max-1040:text-[13px] max-900:hidden'>
                                 <div className=' '>
                                     <ThemeProvider theme={theme}>
                                         <Button className='p-0 my-auto'
